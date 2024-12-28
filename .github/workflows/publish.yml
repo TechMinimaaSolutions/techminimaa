@@ -1,55 +1,43 @@
-name: Deploy Laravel Project to Hostinger
+name: Deploy
 
 on:
   push:
-    branches:
-      - main
-
+    branches: [main]
 jobs:
   deploy:
-    name: Deploy to Hostinger
     runs-on: ubuntu-latest
-
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      # Step 2: Install Composer Dependencies
-      - name: Install Composer Dependencies
-        run: |
-          curl -sS https://getcomposer.org/installer | php
-          php composer.phar install --no-dev --prefer-dist --optimize-autoloader
-
-      # Step 3: Configure SSH
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa 147.93.17.126 >> ~/.ssh/known_hosts
-
-      # Step 4: Upload files to Hostinger
-      - name: Push to Hostinger
-        uses: appleboy/scp-action@v0.1.7
+      - uses: shivammathur/setup-php@v2
         with:
-          host: 147.93.17.126
-          username: u938941419
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: './'
-          target: /home/u938941419/domains/techminimaa.com/public_html
+          php-version: '8.2'
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        
+      - name: Copy .env
+        run: cp .env.example .env
+      - name: Install composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+      - name: Setup Project
+        run: |
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan key:generate
 
-
-      # Step 5: SSH into Hostinger to run migrations and clear cache
-      - name: Run Post-Deployment Commands
-        uses: appleboy/ssh-action@v0.1.7
+      - name: Directory Permissions
+        run: chmod 755 -R storage bootstrap/cache
+      
+      - name: Deploy to Server
+        if: ${{ success() }}
+        uses: appleboy/ssh-action@master
         with:
-          host: 147.93.17.126
-          username: u938941419
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script_stop: true
           script: |
-            cd /home/u938941419/domains/techminimaa.com/public_html
-            php artisan migrate --force
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
+            cd domains
+            cd techminimaa.com
+            git pull
+            php composer.phar install
+            
