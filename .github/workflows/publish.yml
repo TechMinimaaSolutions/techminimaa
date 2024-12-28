@@ -38,6 +38,6 @@ jobs:
               cd /home/u938941419/domains/techminimaa.com/public_html
               git pull 
               php composer.phar install 
-        protocol: tcp
+ 
   
 
