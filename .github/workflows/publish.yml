@@ -13,15 +13,11 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: '8.1'
 
       # Step 2: Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v3
-
-      # Step 3: Copy the .env file
-      - name: Copy .env
-        run: cp .env.example .env
 
       # Step 4: Install Composer dependencies
       - name: Install Composer Dependencies
@@ -34,10 +30,6 @@ jobs:
           php artisan config:clear
           php artisan cache:clear
           php artisan key:generate
-
-      # Step 6: Set directory permissions
-      - name: Directory Permissions
-        run: chmod -R 755 storage bootstrap/cache
 
       # Step 7: Set up SSH
       # - name: Set up SSH
