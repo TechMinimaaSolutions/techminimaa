@@ -30,13 +30,62 @@ jobs:
         if: ${{ success() }}
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script_stop: true
+         host: 147.93.17.126
+          username: u938941419
+          key: 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
+          port: 65002
           script: |
-            cd /home/u938941419/domains/techminimaa.com/public_html
-            git pull
-            php composer.phar install
+          cd /home/u938941419/domains/techminimaa.com/public_html
+          git pull 
+          php composer.phar install 
+        protocol: tcp
+        timeout: 30s
+        command_timeout: 10m
+        capture_stdout: false
 
