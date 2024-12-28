@@ -39,5 +39,5 @@ jobs:
               git pull 
               php composer.phar install 
         protocol: tcp
-        capture_stdout: false
+  
 
