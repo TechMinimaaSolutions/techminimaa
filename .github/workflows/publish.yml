@@ -15,40 +15,19 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Step 2: Set up PHP
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2' # Use the PHP version required by your Laravel project
-          extensions: mbstring, intl, bcmath, opcache
-          ini-values: post_max_size=256M, upload_max_filesize=256M
-          coverage: none
-
-      # Step 3: Install dependencies
+      # Step 2: Install dependencies
       - name: Install Composer Dependencies
         run: composer install --no-dev --prefer-dist --optimize-autoloader
 
-      
-
-      # Step 5: Upload files to Hostinger
+      # Step 3: Upload files to Hostinger
       - name: Push
         uses: appleboy/scp-action@v0.1.7
         with:
           host: 147.93.17.126
           username: u938941419
           key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCzA05fwfpFNpaqOIVFKvhDJglLE/pDouF3KYDA0mJal85lO0jaAcqzpP/QpxLUZU78sMD3gjyfmmZVLGdBQJXTcIgk4QhhU3gZuV93YIvSEEv9qypHi2b2qCE94NmFT8jjv3wQtbEu3+veTifZ4RwsOgvKVHcdgvky8ZSxdTIvpmJOuReayYlrwZk00S9QAgcU+6aYzifi2zA4fGTeXjfdD5jZrdZT1LOeJQWtc5DnIXEFrLC+JCZdJQ+/L/8Qd4cocPtFCA4CZn8G5Pz/sPlfAZav3Rbg+DV+73CQrVypXFpb/Ii+TUj2OlD1BOD6jGeSTvFsbr2MQK5nJHM+tfTcpWJkTqyyssgASy0LFlrQIYF49ddJfEtY4YbtoeRegAH7kmn+xXzxZUTgZwFlas+dVCCuoXhYhF5vg07lU/vLoR+ltEzFfmAPItgTms2St37bCgBGvVVoWqt1jLz8bkpp2J4zJtTDDcZGOkmukY8FaCVV8Q7iqarUyPOpUpxjK2U= u938941419@in-mum-web1833.main-hosting.eu
-          source: |
-            .env
-            public/
-            resources/
-            routes/
-            database/
-            app/
-            bootstrap/
-            config/
-            storage/
+          source: './'
             vendor/
-          target: /home/u938941419/files/public_html
-
-      # Step 6: Set permissions (optional)
+          target: /home/u938941419/domains/techminimaa.com/public_html
+        EOF
      
