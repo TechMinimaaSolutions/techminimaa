@@ -29,15 +29,15 @@ jobs:
 
 
       # Step 5: Set up Laravel
-      - name: Setup Laravel
-        run: |
-          php artisan config:clear
-          php artisan cache:clear
-          php artisan key:generate
+      # - name: Setup Laravel
+      #   run: |
+      #     php artisan config:clear
+      #     php artisan cache:clear
+      #     php artisan key:generate
 
-      # Step 6: Set directory permissions
-      - name: Directory Permissions
-        run: chmod -R 755 storage bootstrap/cache
+      # # Step 6: Set directory permissions
+      # - name: Directory Permissions
+      #   run: chmod -R 755 storage bootstrap/cache
 
       # Step 7: Set up SSH
       # - name: Set up SSH
