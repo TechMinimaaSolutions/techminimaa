@@ -23,9 +23,9 @@ jobs:
       - name: Copy .env
         run: cp .env.example .env
 
-      # Step 4: Install Composer dependencies
-      - name: Install Composer Dependencies
-        run: composer update --no-dev --prefer-dist --optimize-autoloader
+      # # Step 4: Install Composer dependencies
+      # - name: Install Composer Dependencies
+      #   run: composer update --no-dev --prefer-dist --optimize-autoloader
 
 
       # Step 5: Set up Laravel
