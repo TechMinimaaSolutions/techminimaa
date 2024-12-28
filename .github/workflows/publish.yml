@@ -3,41 +3,63 @@ name: Deploy
 on:
   push:
     branches: [main]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: shivammathur/setup-php@v2
+      # Step 1: Set up PHP
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        
+
+      # Step 2: Checkout the code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 3: Copy the .env file
       - name: Copy .env
         run: cp .env.example .env
-      - name: Install composer Dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      - name: Setup Project
+
+      # Step 4: Install Composer dependencies
+      - name: Install Composer Dependencies
+        run: composer install --no-dev --prefer-dist --optimize-autoloader
+
+      # Step 5: Set up Laravel
+      - name: Setup Laravel
         run: |
           php artisan config:clear
           php artisan cache:clear
           php artisan key:generate
 
+      # Step 6: Set directory permissions
       - name: Directory Permissions
-        run: chmod 755 -R storage bootstrap/cache
-      
+        run: chmod -R 755 storage bootstrap/cache
+
+      # Step 7: Set up SSH
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa 147.93.17.126 >> ~/.ssh/known_hosts
+
+      # Step 8: Deploy to Server
       - name: Deploy to Server
         if: ${{ success() }}
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.7
         with:
           host: 147.93.17.126
           username: u938941419
-          key: ${{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 65002
           script: |
-              cd /home/u938941419/domains/techminimaa.com/public_html
-              git pull 
-              php composer.phar install 
- 
-  
-
+            cd /home/u938941419/domains/techminimaa.com/public_html
+            git pull origin main
+            composer install --no-dev --prefer-dist --optimize-autoloader
+            php artisan migrate --force
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
