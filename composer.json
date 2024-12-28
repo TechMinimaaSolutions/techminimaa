@@ -34,8 +34,9 @@
     },
     "scripts": {
         "post-autoload-dump": [
-            "if [ -f artisan ]; then @php artisan package:discover --ansi; fi"
+            "if [ -f artisan ]; then php artisan package:discover --ansi; fi"
         ],
+
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force --no-interaction"
         ],
