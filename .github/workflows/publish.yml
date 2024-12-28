@@ -40,17 +40,17 @@ jobs:
         run: chmod -R 755 storage bootstrap/cache
 
       # Step 7: Set up SSH
-      - name: Set up SSH
-        run: |
-          set -e
-          if [ -z ${{ secrets.SSH_PRIVATE_KEY }} ]; then
-            echo "Error: SSH_PRIVATE_KEY is not set."
-            exit 1
-          fi
-          mkdir -p ~/.ssh
-          echo ${{ secrets.SSH_PRIVATE_KEY }} | tr -d '\r' > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 147.93.17.126 >> ~/.ssh/known_hosts
+      # - name: Set up SSH
+      #   run: |
+      #     set -e
+      #     if [ -z ${{ secrets.SSH_PRIVATE_KEY }} ]; then
+      #       echo "Error: SSH_PRIVATE_KEY is not set."
+      #       exit 1
+      #     fi
+      #     mkdir -p ~/.ssh
+      #     echo ${{ secrets.SSH_PRIVATE_KEY }} | tr -d '\r' > ~/.ssh/id_rsa
+      #     chmod 600 ~/.ssh/id_rsa
+      #     ssh-keyscan -H 147.93.17.126 >> ~/.ssh/known_hosts
       # Step 8: Deploy to Server
       - name: Deploy to Server
         if: ${{ success() }}
