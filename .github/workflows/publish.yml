@@ -39,7 +39,6 @@ jobs:
               git pull 
               php composer.phar install 
         protocol: tcp
-        timeout: 30s
         command_timeout: 10m
         capture_stdout: false
 
