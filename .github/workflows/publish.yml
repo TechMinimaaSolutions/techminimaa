@@ -3,6 +3,7 @@ name: HostingerDeploy
 on:
   push:
     branches: [main]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,33 +11,35 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+
       - uses: actions/checkout@v2
+
       - name: Copy .env
         run: cp .env.example .env
+
       - name: Install composer Dependencies
         run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-  
-      - name: Deploy PHP to Server
-        if: ${{ success() }}
-        uses: appleboy/ssh-action@master
-        with:
-          host: 147.93.17.126
-          username: u938941419
-          port: 65002
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
-          script: |
-            cd domains
-            cd techminimaa.com
-            git pull
-            php composer.phar install
-            php artisan migrate --force
+
       - name: Install SSH key
         run: |
           mkdir -p ~/.ssh/
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy PHP to Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/domains/techminimaa.com || exit 1  # Ensure you're in the right directory
+            git pull origin main || exit 1  # Make sure git pull works
+            php composer.phar install --no-dev --optimize-autoloader || exit 1  # Ensure composer install works
+            php artisan migrate --force || exit 1  # Ensure migration works
+
       - name: Copy Build Files to Target Server
         run: |
           rsync -r -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/techminimaa.com/public/build
