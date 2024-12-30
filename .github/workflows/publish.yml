@@ -30,20 +30,17 @@ jobs:
             # cp .env .env.backup
             
             # Get only the new changes
-            git fetch origin main
-            git reset --hard origin/main
+            # git fetch origin main
+            # git reset --hard origin/main
             
             # Restore .env
             # mv .env.backup .env
             
             # Clear and update Laravel cache
-            php artisan config:clear
-            php artisan cache:clear
-            php artisan view:clear
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
-            
-            # Set proper permissions
-            chmod -R 755 .
-            chmod -R 775 storage bootstrap/cache
+            # php artisan config:clear
+            # php artisan cache:clear
+            # php artisan view:clear
+            # php artisan config:cache
+            # php artisan route:cache
+            # php artisan view:cache
+     
