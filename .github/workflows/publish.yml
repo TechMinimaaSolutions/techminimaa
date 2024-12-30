@@ -14,7 +14,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          tools: composer:v2 # Explicitly specify Composer 2
+          tools: composer:v2
           
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
@@ -25,62 +25,75 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Navigate to the project directory
-            cd domains/techminimaa.com/public_html
+            cd domains/techminimaa.com
             
-            # If .git doesn't exist, initialize git
-            if [ ! -d .git ]; then
-              git init
-              git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            # Backup existing .env file if it exists
+            if [ -f .env ]; then
+              cp .env .env.backup
             fi
             
-            # Fetch and reset to match remote
-            git fetch origin main
-            git checkout main || git checkout -b main
-            git reset --hard origin/main
+            # Update Composer to version 2
+            php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+            php composer-setup.php --filename=composer.phar --2
+            php -r "unlink('composer-setup.php');"
             
-            # Install Composer 2 if not already installed
-            if ! composer -V | grep -q "Composer version 2"; then
-              php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-              php composer-setup.php --install-dir=/usr/local/bin --filename=composer --2
-              php -r "unlink('composer-setup.php');"
-            fi
+            # Create or update .env file with correct database credentials
+            cat > .env << 'EOL'
+            APP_NAME=TechMinimaa
+            APP_ENV=production
+            APP_DEBUG=false
+            APP_URL=https://techminimaa.com
             
-            # Create .env file if it doesn't exist
-            if [ ! -f .env ]; then
-              cp .env.example .env
-              # You might want to set your production environment variables here
-              sed -i 's/APP_ENV=local/APP_ENV=production/' .env
-              sed -i 's/APP_DEBUG=true/APP_DEBUG=false/' .env
-            fi
+            LOG_CHANNEL=stack
+            LOG_LEVEL=error
             
-            # Install dependencies
-            composer install --no-dev --optimize-autoloader
+            DB_CONNECTION=mysql
+            DB_HOST=techminimaa.com
+            DB_PORT=3306
+            DB_DATABASE=u938941419_techminimaa
+            DB_USERNAME=u938941419_techminimaa
+            DB_PASSWORD=Ashwanirai@1
+            
+            BROADCAST_DRIVER=log
+            CACHE_DRIVER=file
+            FILESYSTEM_DISK=local
+            QUEUE_CONNECTION=sync
+            SESSION_DRIVER=file
+            SESSION_LIFETIME=120
+            EOL
+            
+            # Install dependencies with Composer 2
+            php composer.phar install --no-dev --optimize-autoloader
+            
+            # Set up storage directory
+            mkdir -p storage/framework/{sessions,views,cache}
+            mkdir -p storage/logs
+            mkdir -p bootstrap/cache
             
             # Set proper permissions
-            chmod -R 755 storage bootstrap/cache
+            chmod -R 755 .
             chmod -R 775 storage bootstrap/cache
             
-            # Generate application key if not already set
-            if ! grep -q "^APP_KEY=" .env || grep -q "^APP_KEY=$" .env; then
-              php artisan key:generate
+            # Setup public_html directory
+            mkdir -p public_html
+            cp -r public/* public_html/
+            
+            # Create storage symlink manually
+            mkdir -p public_html/storage
+            if [ -d "storage/app/public" ]; then
+              cp -r storage/app/public/* public_html/storage/
             fi
             
-            # Run Laravel commands
+            # Update index.php in public_html
+            cp public/index.php public_html/
+            sed -i 's|/../vendor/autoload.php|/../../vendor/autoload.php|' public_html/index.php
+            sed -i 's|/../bootstrap/app.php|/../../bootstrap/app.php|' public_html/index.php
+            
+            # Generate key and cache config
+            php artisan key:generate --force
+            php artisan config:clear
+            php artisan cache:clear
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
-            php artisan storage:link
-            
-            # Run migrations
             php artisan migrate --force
-            
-      - name: Copy Build Files
-        uses: appleboy/scp-action@master
-        with:
-          host: 147.93.17.126
-          username: u938941419
-          port: 65002
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "public/build/"
-          target: "domains/techminimaa.com/public_html"
-          strip_components: 1
