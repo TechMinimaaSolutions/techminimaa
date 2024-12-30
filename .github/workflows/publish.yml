@@ -50,7 +50,7 @@ jobs:
       #     echo ${{ secrets.SSH_PRIVATE_KEY }} | tr -d '\r' > ~/.ssh/id_rsa
       #     chmod 600 ~/.ssh/id_rsa
       #     ssh-keyscan -H 147.93.17.126 >> ~/.ssh/known_hosts
-      # Step 8: Deploy to Server
+      # Step 8: Deploy to Servers
       - name: Deploy to Server
         if: ${{ success() }}
         uses: appleboy/ssh-action@v0.1.7
