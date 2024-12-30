@@ -27,33 +27,45 @@ jobs:
             # Navigate to the project directory
             cd domains/techminimaa.com
             
-            # Backup existing .env file if it exists
+            # Backup .env if it exists
             if [ -f .env ]; then
               cp .env .env.backup
             fi
             
-            # Update Composer to version 2
-            php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-            php composer-setup.php --filename=composer.phar --2
-            php -r "unlink('composer-setup.php');"
+            # Clone the repository
+            if [ ! -d .git ]; then
+              git init
+              git remote add origin https://github.com/TechMinimaaSolutions/techminimaa.git
+            fi
             
-            # Create or update .env file with correct database credentials
-            cat > .env << 'EOL'
+            # Fetch and reset to latest changes
+            git fetch origin main
+            git checkout -f main
+            git reset --hard origin/main
+            
+            # Restore .env if backup exists, otherwise create new one
+            if [ -f .env.backup ]; then
+              cp .env.backup .env
+            else
+              # Create new .env file
+              cat > .env << 'EOL'
             APP_NAME=TechMinimaa
             APP_ENV=production
+            APP_KEY=base64:$(php -r "echo base64_encode(random_bytes(32));")
             APP_DEBUG=false
             APP_URL=https://techminimaa.com
-            
+
             LOG_CHANNEL=stack
+            LOG_DEPRECATIONS_CHANNEL=null
             LOG_LEVEL=error
-            
+
             DB_CONNECTION=mysql
             DB_HOST=techminimaa.com
             DB_PORT=3306
             DB_DATABASE=u938941419_techminimaa
             DB_USERNAME=u938941419_techminimaa
             DB_PASSWORD=Ashwanirai@1
-            
+
             BROADCAST_DRIVER=log
             CACHE_DRIVER=file
             FILESYSTEM_DISK=local
@@ -61,39 +73,84 @@ jobs:
             SESSION_DRIVER=file
             SESSION_LIFETIME=120
             EOL
+            fi
             
-            # Install dependencies with Composer 2
+            # Update Composer to version 2
+            php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+            php composer-setup.php --filename=composer.phar --2
+            php -r "unlink('composer-setup.php');"
+            
+            # Install dependencies
             php composer.phar install --no-dev --optimize-autoloader
             
-            # Set up storage directory
+            # Create directory structure
             mkdir -p storage/framework/{sessions,views,cache}
             mkdir -p storage/logs
             mkdir -p bootstrap/cache
+            mkdir -p storage/app/public
+            mkdir -p public_html
             
             # Set proper permissions
             chmod -R 755 .
             chmod -R 775 storage bootstrap/cache
+            chown -R u938941419:u938941419 .
             
             # Setup public_html directory
-            mkdir -p public_html
+            rm -rf public_html/*
             cp -r public/* public_html/
             
-            # Create storage symlink manually
+            # Create storage directory in public_html
             mkdir -p public_html/storage
-            if [ -d "storage/app/public" ]; then
-              cp -r storage/app/public/* public_html/storage/
-            fi
             
             # Update index.php in public_html
             cp public/index.php public_html/
             sed -i 's|/../vendor/autoload.php|/../../vendor/autoload.php|' public_html/index.php
             sed -i 's|/../bootstrap/app.php|/../../bootstrap/app.php|' public_html/index.php
             
+            # Create .htaccess in public_html
+            cat > public_html/.htaccess << 'EOL'
+            <IfModule mod_rewrite.c>
+                <IfModule mod_negotiation.c>
+                    Options -MultiViews -Indexes
+                </IfModule>
+
+                RewriteEngine On
+
+                # Handle Authorization Header
+                RewriteCond %{HTTP:Authorization} .
+                RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+                # Redirect Trailing Slashes If Not A Folder...
+                RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteCond %{REQUEST_URI} (.+)/$
+                RewriteRule ^ %1 [L,R=301]
+
+                # Send Requests To Front Controller...
+                RewriteCond %{REQUEST_FILENAME} !-d
+                RewriteCond %{REQUEST_FILENAME} !-f
+                RewriteRule ^ index.php [L]
+            </IfModule>
+            EOL
+            
             # Generate key and cache config
             php artisan key:generate --force
+            php artisan storage:link --force
             php artisan config:clear
             php artisan cache:clear
+            php artisan view:clear
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
-            # php artisan migrate --force
+            php artisan migrate --force
+
+      - name: Verify Deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: 147.93.17.126
+          username: u938941419
+          port: 65002
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd domains/techminimaa.com
+            php artisan --version
+            ls -la public_html/
