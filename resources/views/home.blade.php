@@ -11,7 +11,7 @@
             <h1 class="md:text-5xl text-4xl font-bold mb-6 md:!leading-[55px]">Website Design Services that Maximize Traffic, Engagement, and Conversion</h1>
             <div class="flex flex-wrap -mx-4">
                 <div class="w-full sm:w-1/2 px-4">
-                    <ul class="space-y-4">
+                    <ul class="">
                         <li class="flex items-center p-2  transition-all duration-300 group">
                             <div class="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full group-hover:bg-green-500 transition-colors duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -31,7 +31,7 @@
                     </ul>
                 </div>
                 <div class="w-full sm:w-1/2 px-4">
-                    <ul class="space-y-4">
+                    <ul class="">
                         <li class="flex items-center p-2  transition-all duration-300 group">
                             <div class="flex items-center justify-center w-8 h-8 bg-green-100 rounded-full group-hover:bg-green-500 transition-colors duration-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 group-hover:text-white" viewBox="0 0 20 20" fill="currentColor">
