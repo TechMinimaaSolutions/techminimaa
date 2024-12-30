@@ -4,7 +4,7 @@
 @section('title', 'Home')
 
 @section('content')
-    <h1 class="h-screen">hello</h1>
+    <h1 class="h-screen">hello techminimaa</h1>
    
 
 @endsection
