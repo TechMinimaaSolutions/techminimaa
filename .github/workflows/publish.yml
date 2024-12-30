@@ -3,7 +3,6 @@ name: HostingerDeploy
 on:
   push:
     branches: [main]
-    # Only trigger deployment for these file changes
     paths:
       - 'app/**'
       - 'routes/**'
@@ -23,24 +22,36 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Go to your project directory
             cd domains/techminimaa.com/public_html
             
-            # Backup current .env
-            # cp .env .env.backup
+            # Get the list of changed files
+            CHANGED_FILES=$(git diff --name-only HEAD HEAD~1)
             
-            # Get only the new changes
+            # Fetch latest changes without resetting everything
             git fetch origin main
-            git reset --hard origin/main
             
-            # Restore .env
-            # mv .env.backup .env
+            # Apply only the changes
+            git checkout origin/main -- ${CHANGED_FILES}
             
-            # Clear and update Laravel cache
-            # php artisan config:clear
-            # php artisan cache:clear
-            # php artisan view:clear
-            # php artisan config:cache
-            # php artisan route:cache
-            # php artisan view:cache
-     
+            # Only clear specific caches based on what changed
+            if [[ $CHANGED_FILES == *"routes"* ]]; then
+              php artisan route:clear
+              php artisan route:cache
+            fi
+            
+            if [[ $CHANGED_FILES == *"views"* || $CHANGED_FILES == *"resources"* ]]; then
+              php artisan view:clear
+              php artisan view:cache
+            fi
+            
+            if [[ $CHANGED_FILES == *"config"* ]]; then
+              php artisan config:clear
+              php artisan config:cache
+            fi
+            
+            # Set permissions only for changed files
+            for file in ${CHANGED_FILES}; do
+              chmod 755 "$file" 2>/dev/null || true
+            done
+            
+            echo "Updated files: ${CHANGED_FILES}"

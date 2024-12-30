@@ -5,6 +5,4 @@
 
 @section('content')
     <h1 class="h-screen">hddi</h1>
-   ss
-
 @endsection
