@@ -3,19 +3,20 @@ name: HostingerDeploy
 on:
   push:
     branches: [main]
+    paths:
+      - 'app/**'
+      - 'routes/**'
+      - 'resources/**'
+      - 'database/migrations/**'
+      - 'database/seeders/**'
+      - 'tests/**'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Only allow specific users to trigger deployments
+    if: github.actor == 'TechMinimaaSolutions'
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          
-      - uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-          tools: composer:v2
-          
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
         with:
@@ -24,116 +25,26 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Navigate to public_html directory
             cd domains/techminimaa.com/public_html
             
-            # Generate a random key for APP_KEY
-            APP_KEY=$(php -r "echo base64_encode(random_bytes(32));")
+            # Backup .env
+            cp .env .env.backup
             
-            # Backup existing files (if any)
-            timestamp=$(date +%Y%m%d_%H%M%S)
-            if [ -f ".env" ]; then
-              cp .env ".env.backup_${timestamp}"
-            fi
+            # Pull only allowed changes
+            git fetch origin main
+            git reset --hard origin/main
             
-            # Clone the repository
-            rm -rf * .[^.]*
-            git clone https://github.com/TechMinimaaSolutions/techminimaa.git .
-            git checkout main
+            # Restore .env
+            mv .env.backup .env
             
-            # Install Composer dependencies
-            php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-            php composer-setup.php --filename=composer.phar --2
-            php -r "unlink('composer-setup.php');"
-            php composer.phar install --no-dev --optimize-autoloader
-            
-            # Create necessary directories
-            mkdir -p storage/framework/{sessions,views,cache}
-            mkdir -p storage/logs
-            mkdir -p bootstrap/cache
-            mkdir -p storage/app/public
-            
-            # Set directory permissions
-            chmod -R 755 .
-            chmod -R 775 storage bootstrap/cache
-            
-            # Create .env file
-            cat > .env << EOL
-            APP_NAME=TechMinimaa
-            APP_ENV=production
-            APP_DEBUG=false
-            APP_URL=https://techminimaa.com
-            APP_KEY=base64:${APP_KEY}
-
-            LOG_CHANNEL=stack
-            LOG_DEPRECATIONS_CHANNEL=null
-            LOG_LEVEL=error
-
-            DB_CONNECTION=mysql
-            DB_HOST=193.203.184.211
-            DB_PORT=3306
-            DB_DATABASE=u938941419_techminimaa
-            DB_USERNAME=u938941419_techminimaa
-            DB_PASSWORD=Ashwanirai@1
-
-            BROADCAST_DRIVER=log
-            CACHE_DRIVER=file
-            FILESYSTEM_DISK=local
-            QUEUE_CONNECTION=sync
-            SESSION_DRIVER=file
-            SESSION_LIFETIME=120
-            EOL
-            
-            # Move public directory contents to root
-            mv public/* .
-            rm -rf public
-            
-            # Update index.php paths
-            sed -i 's|/../vendor/autoload.php|/vendor/autoload.php|' index.php
-            sed -i 's|/../bootstrap/app.php|/bootstrap/app.php|' index.php
-            
-            # Create .htaccess
-            cat > .htaccess << 'EOL'
-            <IfModule mod_rewrite.c>
-                <IfModule mod_negotiation.c>
-                    Options -MultiViews -Indexes
-                </IfModule>
-
-                RewriteEngine On
-
-                # Handle Authorization Header
-                RewriteCond %{HTTP:Authorization} .
-                RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-
-                # Redirect Trailing Slashes...
-                RewriteCond %{REQUEST_FILENAME} !-d
-                RewriteCond %{REQUEST_URI} (.+)/$
-                RewriteRule ^ %1 [L,R=301]
-
-                # Handle Front Controller...
-                RewriteCond %{REQUEST_FILENAME} !-d
-                RewriteCond %{REQUEST_FILENAME} !-f
-                RewriteRule ^ index.php [L]
-            </IfModule>
-            EOL
-            
-            # Clear all caches
+            # Clear and rebuild cache
             php artisan config:clear
             php artisan cache:clear
             php artisan view:clear
-            
-            # Cache configurations
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
             
-            # Run migrations
-            php artisan migrate --force
-            
-            # Create storage link manually (since symlink might not work)
-            mkdir -p storage
-            cp -r storage/app/public/* storage/ 2>/dev/null || true
-            
-            # Final permissions
+            # Set permissions
             chmod -R 755 .
             chmod -R 775 storage bootstrap/cache
