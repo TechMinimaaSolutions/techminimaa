@@ -4,5 +4,5 @@
 @section('title', 'Home')
 
 @section('content')
-    <h1 class="h-screen">hddi</h1>
+    <h1 class="h-screen">Ashwani Rai</h1>
 @endsection
