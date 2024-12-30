@@ -4,11 +4,12 @@
 @section('title', 'Home')
 
 @section('content')
+<section>
 <div class="lg:min-h-[560px] bg-blue-100 px-4 sm:px-10">
     <div class="max-w-7xl w-full mx-auto py-8 md:py-14">
       <div class="grid lg:grid-cols-2 justify-center items-center gap-6">
         <div>
-          <h1 class="md:text-5xl text-4xl font-bold mb-6 md:!leading-[55px]">Website Design Services that Maximize Traffic, Engagement, and Conversion</h1>
+          <h1 class="md:text-5xl text-4xl font-bold  mb-6 md:!leading-[55px]">Website Design Services that Maximize Traffic, Engagement, and Conversion</h1>
           <div class="flex flex-wrap -mx-4">
             <div class="w-full sm:w-1/2 px-4">
                 <ul class="">
@@ -89,5 +90,42 @@
       </div>
     </div>
 </div>
-
+</section>
+<!-- Main Wrapper -->
+<section class="w-full">
+    <!-- Reviews Section -->
+    <div class="bg-[#556c25] py-5">
+      <div class="max-w-7xl mx-auto px-4">
+        <!-- Review Logos Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Google Reviews -->
+          <div class="flex flex-col items-center">
+            <img src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d7c956b/thriveagency.com/wp-content/themes/thrive-agency/images/google-reviews-stats-new.svg" alt="Google Reviews" class="h-11 mb-4">
+            <div class="flex items-center mb-2">
+              <img src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/source/rev-d7c956b/thriveagency.com/files/social-review-item-new.svg" alt="5 Stars" class="h-6">
+            </div>
+            <p class="font-bold text-white">150+ Reviews</p>
+          </div>
+  
+          <!-- Clutch Reviews -->
+          <div class="flex flex-col items-center">
+            <img src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d7c956b/thriveagency.com/wp-content/themes/thrive-agency/images/clutch-reviews-stats-new.svg" alt="Clutch Reviews" class="h-11 mb-4">
+            <div class="flex items-center mb-2">
+              <img src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/source/rev-d7c956b/thriveagency.com/files/social-review-item-new.svg" alt="5 Stars" class="h-6">
+            </div>
+            <p class="font-bold text-white">50+ Reviews</p>
+          </div>
+  
+          <!-- UpCity Reviews -->
+          <div class="flex flex-col items-center">
+            <img src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/optimized/rev-d7c956b/thriveagency.com/wp-content/themes/thrive-agency/images/upcity-reviews-logo-new.svg" alt="UpCity Reviews" class="h-11 mb-4">
+            <div class="flex items-center mb-2">
+              <img src="https://cdn-icggj.nitrocdn.com/AphBmykuaGyxZijWArNhxcCiPzVdYZGT/assets/images/source/rev-d7c956b/thriveagency.com/files/social-review-item-new.svg" alt="5 Stars" class="h-6">
+            </div>
+            <p class="font-bold text-white">50+ Reviews</p>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </section>
 @endsection
