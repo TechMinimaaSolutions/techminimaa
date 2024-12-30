@@ -25,47 +25,18 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Navigate to public_html directory
-            cd domains/techminimaa.com/public_html
+            cd domains/techminimaa.com
             
             # Generate a random key for APP_KEY
             APP_KEY=$(php -r "echo base64_encode(random_bytes(32));")
             
-            # Backup existing files if any
-            if [ -d ".git" ]; then
-              mv .env .env.backup 2>/dev/null || true
-            fi
+            # Create temporary directory for clone
+            mkdir -p temp_deploy
+            cd temp_deploy
             
             # Clone the repository
-            rm -rf * .[^.]*
             git clone https://github.com/TechMinimaaSolutions/techminimaa.git .
             git checkout main
-            
-            # Create .env file
-            cat > .env << EOL
-            APP_NAME=TechMinimaa
-            APP_ENV=production
-            APP_DEBUG=false
-            APP_URL=https://techminimaa.com
-            APP_KEY=base64:${APP_KEY}
-
-            LOG_CHANNEL=stack
-            LOG_DEPRECATIONS_CHANNEL=null
-            LOG_LEVEL=error
-
-            DB_CONNECTION=mysql
-            DB_HOST=localhost
-            DB_PORT=3306
-            DB_DATABASE=u938941419_techminimaa
-            DB_USERNAME=u938941419_techminimaa
-            DB_PASSWORD=Ashwanirai@1
-
-            BROADCAST_DRIVER=log
-            CACHE_DRIVER=file
-            FILESYSTEM_DISK=local
-            QUEUE_CONNECTION=sync
-            SESSION_DRIVER=file
-            SESSION_LIFETIME=120
-            EOL
             
             # Install Composer dependencies
             php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -83,19 +54,70 @@ jobs:
             chmod -R 755 .
             chmod -R 775 storage bootstrap/cache
             
-            # Create storage link manually
-            mkdir -p storage
-            cp -r storage/app/public/* storage/ 2>/dev/null || true
+            # Create .env file
+            cat > .env << EOL
+            APP_NAME=TechMinimaa
+            APP_ENV=production
+            APP_DEBUG=false
+            APP_URL=https://techminimaa.com
+            APP_KEY=base64:${APP_KEY}
+
+            LOG_CHANNEL=stack
+            LOG_DEPRECATIONS_CHANNEL=null
+            LOG_LEVEL=error
+
+            DB_CONNECTION=mysql
+            DB_HOST=193.203.184.211
+            DB_PORT=3306
+            DB_DATABASE=u938941419_techminimaa
+            DB_USERNAME=u938941419_techminimaa
+            DB_PASSWORD=Ashwanirai@1
+
+            BROADCAST_DRIVER=log
+            CACHE_DRIVER=file
+            FILESYSTEM_DISK=local
+            QUEUE_CONNECTION=sync
+            SESSION_DRIVER=file
+            SESSION_LIFETIME=120
+            EOL
             
-            # Move public directory contents to root
-            mv public/* .
-            rm -rf public
+            # Clear all caches
+            php artisan config:clear
+            php artisan cache:clear
+            php artisan view:clear
             
-            # Update paths in index.php
-            sed -i 's|/../vendor/autoload.php|/vendor/autoload.php|' index.php
-            sed -i 's|/../bootstrap/app.php|/bootstrap/app.php|' index.php
+            # Cache configurations
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
             
-            # Create .htaccess
+            # Run migrations
+            php artisan migrate --force
+            
+            # Prepare public directory for moving
+            cd ..
+            
+            # Backup existing public_html if it exists
+            if [ -d "public_html" ]; then
+              mv public_html public_html_backup_$(date +%Y%m%d_%H%M%S)
+            fi
+            
+            # Move the public directory to public_html
+            mv temp_deploy/public public_html
+            
+            # Move the rest of the application to the root
+            mv temp_deploy/* .
+            mv temp_deploy/.* . 2>/dev/null || true
+            
+            # Remove temporary directory
+            rm -rf temp_deploy
+            
+            # Update index.php paths in public_html
+            cd public_html
+            sed -i 's|/../vendor/autoload.php|/../../vendor/autoload.php|' index.php
+            sed -i 's|/../bootstrap/app.php|/../../bootstrap/app.php|' index.php
+            
+            # Create .htaccess in public_html
             cat > .htaccess << 'EOL'
             <IfModule mod_rewrite.c>
                 <IfModule mod_negotiation.c>
@@ -120,15 +142,10 @@ jobs:
             </IfModule>
             EOL
             
-            # Clear all caches
-            php artisan config:clear
-            php artisan cache:clear
-            php artisan view:clear
+            # Create storage symlink
+            cd ..
+            php artisan storage:link
             
-            # Cache configurations
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
-            
-            # Run migrations
-            php artisan migrate --force
+            # Final permissions check
+            chmod -R 755 .
+            chmod -R 775 storage bootstrap/cache public_html/storage
