@@ -30,8 +30,8 @@ jobs:
             # cp .env .env.backup
             
             # Get only the new changes
-            # git fetch origin main
-            # git reset --hard origin/main
+            git fetch origin main
+            git reset --hard origin/main
             
             # Restore .env
             # mv .env.backup .env
