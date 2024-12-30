@@ -7,9 +7,7 @@
     <title>{{ env('APP_NAME') }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <script>
         tailwind.config = {
             theme: {
@@ -30,7 +28,7 @@
     </div>
 
     @include('partials.footer')
-    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
