@@ -25,16 +25,19 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Navigate to public_html directory
-            cd domains/techminimaa.com
+            cd domains/techminimaa.com/public_html
             
             # Generate a random key for APP_KEY
             APP_KEY=$(php -r "echo base64_encode(random_bytes(32));")
             
-            # Create temporary directory for clone
-            mkdir -p temp_deploy
-            cd temp_deploy
+            # Backup existing files (if any)
+            timestamp=$(date +%Y%m%d_%H%M%S)
+            if [ -f ".env" ]; then
+              cp .env ".env.backup_${timestamp}"
+            fi
             
             # Clone the repository
+            rm -rf * .[^.]*
             git clone https://github.com/TechMinimaaSolutions/techminimaa.git .
             git checkout main
             
@@ -81,43 +84,15 @@ jobs:
             SESSION_LIFETIME=120
             EOL
             
-            # Clear all caches
-            php artisan config:clear
-            php artisan cache:clear
-            php artisan view:clear
+            # Move public directory contents to root
+            mv public/* .
+            rm -rf public
             
-            # Cache configurations
-            php artisan config:cache
-            php artisan route:cache
-            php artisan view:cache
+            # Update index.php paths
+            sed -i 's|/../vendor/autoload.php|/vendor/autoload.php|' index.php
+            sed -i 's|/../bootstrap/app.php|/bootstrap/app.php|' index.php
             
-            # Run migrations
-            php artisan migrate --force
-            
-            # Prepare public directory for moving
-            cd ..
-            
-            # Backup existing public_html if it exists
-            if [ -d "public_html" ]; then
-              mv public_html public_html_backup_$(date +%Y%m%d_%H%M%S)
-            fi
-            
-            # Move the public directory to public_html
-            mv temp_deploy/public public_html
-            
-            # Move the rest of the application to the root
-            mv temp_deploy/* .
-            mv temp_deploy/.* . 2>/dev/null || true
-            
-            # Remove temporary directory
-            rm -rf temp_deploy
-            
-            # Update index.php paths in public_html
-            cd public_html
-            sed -i 's|/../vendor/autoload.php|/../../vendor/autoload.php|' index.php
-            sed -i 's|/../bootstrap/app.php|/../../bootstrap/app.php|' index.php
-            
-            # Create .htaccess in public_html
+            # Create .htaccess
             cat > .htaccess << 'EOL'
             <IfModule mod_rewrite.c>
                 <IfModule mod_negotiation.c>
@@ -142,10 +117,23 @@ jobs:
             </IfModule>
             EOL
             
-            # Create storage symlink
-            cd ..
-            php artisan storage:link
+            # Clear all caches
+            php artisan config:clear
+            php artisan cache:clear
+            php artisan view:clear
             
-            # Final permissions check
+            # Cache configurations
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            
+            # Run migrations
+            php artisan migrate --force
+            
+            # Create storage link manually (since symlink might not work)
+            mkdir -p storage
+            cp -r storage/app/public/* storage/ 2>/dev/null || true
+            
+            # Final permissions
             chmod -R 755 .
-            chmod -R 775 storage bootstrap/cache public_html/storage
+            chmod -R 775 storage bootstrap/cache
