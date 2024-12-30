@@ -24,22 +24,21 @@ jobs:
           port: 65002
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Navigate to the project directory
-            cd domains/techminimaa.com
+            # Navigate to public_html directory
+            cd domains/techminimaa.com/public_html
             
             # Generate a random key for APP_KEY
             APP_KEY=$(php -r "echo base64_encode(random_bytes(32));")
             
-            # Clone the repository
-            if [ ! -d .git ]; then
-              git init
-              git remote add origin https://github.com/TechMinimaaSolutions/techminimaa.git
+            # Backup existing files if any
+            if [ -d ".git" ]; then
+              mv .env .env.backup 2>/dev/null || true
             fi
             
-            # Fetch and reset to latest changes
-            git fetch origin main
-            git checkout -f main || git checkout -b main
-            git reset --hard origin/main
+            # Clone the repository
+            rm -rf * .[^.]*
+            git clone https://github.com/TechMinimaaSolutions/techminimaa.git .
+            git checkout main
             
             # Create .env file
             cat > .env << EOL
@@ -79,28 +78,25 @@ jobs:
             mkdir -p storage/logs
             mkdir -p bootstrap/cache
             mkdir -p storage/app/public
-            mkdir -p public_html
             
-            # Set directory permissions (without chown)
+            # Set directory permissions
             chmod -R 755 .
             chmod -R 775 storage bootstrap/cache
             
-            # Copy public files to public_html
-            rm -rf public_html/*
-            cp -r public/* public_html/
-            
             # Create storage link manually
-            mkdir -p public_html/storage
-            cp -r storage/app/public/* public_html/storage/ 2>/dev/null || true
+            mkdir -p storage
+            cp -r storage/app/public/* storage/ 2>/dev/null || true
             
-            # Update index.php paths
-            if [ -f public_html/index.php ]; then
-              sed -i 's|/../vendor/autoload.php|/../../vendor/autoload.php|' public_html/index.php
-              sed -i 's|/../bootstrap/app.php|/../../bootstrap/app.php|' public_html/index.php
-            fi
+            # Move public directory contents to root
+            mv public/* .
+            rm -rf public
             
-            # Create .htaccess in public_html
-            cat > public_html/.htaccess << 'EOL'
+            # Update paths in index.php
+            sed -i 's|/../vendor/autoload.php|/vendor/autoload.php|' index.php
+            sed -i 's|/../bootstrap/app.php|/bootstrap/app.php|' index.php
+            
+            # Create .htaccess
+            cat > .htaccess << 'EOL'
             <IfModule mod_rewrite.c>
                 <IfModule mod_negotiation.c>
                     Options -MultiViews -Indexes
@@ -134,5 +130,5 @@ jobs:
             php artisan route:cache
             php artisan view:cache
             
-            # Run migrations (without trying to create user)
+            # Run migrations
             php artisan migrate --force
