@@ -24,33 +24,33 @@ jobs:
         run: cp .env.example .env
 
       # # Step 4: Install Composer dependencies
-      # - name: Install Composer Dependencies
-      #   run: composer update --no-dev --prefer-dist --optimize-autoloader
+      - name: Install Composer Dependencies
+        run: composer install --no-dev --prefer-dist --optimize-autoloader
 
 
       # Step 5: Set up Laravel
-      # - name: Setup Laravel
-      #   run: |
-      #     php artisan config:clear
-      #     php artisan cache:clear
-      #     php artisan key:generate
+      - name: Setup Laravel
+        run: |
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan key:generate
 
       # # Step 6: Set directory permissions
-      # - name: Directory Permissions
-      #   run: chmod -R 755 storage bootstrap/cache
+      - name: Directory Permissions
+        run: chmod -R 755 storage bootstrap/cache
 
       # Step 7: Set up SSH
-      # - name: Set up SSH
-      #   run: |
-      #     set -e
-      #     if [ -z ${{ secrets.SSH_PRIVATE_KEY }} ]; then
-      #       echo "Error: SSH_PRIVATE_KEY is not set."
-      #       exit 1
-      #     fi
-      #     mkdir -p ~/.ssh
-      #     echo ${{ secrets.SSH_PRIVATE_KEY }} | tr -d '\r' > ~/.ssh/id_rsa
-      #     chmod 600 ~/.ssh/id_rsa
-      #     ssh-keyscan -H 147.93.17.126 >> ~/.ssh/known_hosts
+      - name: Set up SSH
+        run: |
+          set -e
+          if [ -z ${{ secrets.SSH_PRIVATE_KEY }} ]; then
+            echo "Error: SSH_PRIVATE_KEY is not set."
+            exit 1
+          fi
+          mkdir -p ~/.ssh
+          echo ${{ secrets.SSH_PRIVATE_KEY }} | tr -d '\r' > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 147.93.17.126 >> ~/.ssh/known_hosts
       # Step 8: Deploy to Server
       - name: Deploy to Server
         if: ${{ success() }}
