@@ -14,7 +14,7 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          tools: composer:v2 # Explicitly specify Composer 2
+          tools: composer:v2
           
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
@@ -27,52 +27,55 @@ jobs:
             # Navigate to the project directory
             cd domains/techminimaa.com
             
-            # If .git doesn't exist, initialize git
+            # Install Composer 2 locally in the project directory
+            php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+            php composer-setup.php --filename=composer.phar
+            php -r "unlink('composer-setup.php');"
+            
+            # Initialize git repository
             if [ ! -d .git ]; then
               git init
               git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            else
+              git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
             fi
             
             # Fetch and reset to match remote
             git fetch origin main
-            git checkout main || git checkout -b main
+            git checkout -f main || git checkout -b main
             git reset --hard origin/main
             
-            # Install Composer 2 if not already installed
-            if ! composer -V | grep -q "Composer version 2"; then
-              php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-              php composer-setup.php --install-dir=/usr/local/bin --filename=composer --2
-              php -r "unlink('composer-setup.php');"
-            fi
-            
-            # Create .env file if it doesn't exist
+            # Create .env if it doesn't exist
             if [ ! -f .env ]; then
               cp .env.example .env
-              # You might want to set your production environment variables here
               sed -i 's/APP_ENV=local/APP_ENV=production/' .env
               sed -i 's/APP_DEBUG=true/APP_DEBUG=false/' .env
             fi
             
-            # Install dependencies
-            composer install --no-dev --optimize-autoloader
+            # Create directory structure
+            mkdir -p storage/framework/{sessions,views,cache}
+            mkdir -p storage/logs
+            mkdir -p bootstrap/cache
             
-            # Set proper permissions
-            chmod -R 755 storage bootstrap/cache
+            # Set permissions
+            chmod -R 755 .
             chmod -R 775 storage bootstrap/cache
             
-            # Generate application key if not already set
-            if ! grep -q "^APP_KEY=" .env || grep -q "^APP_KEY=$" .env; then
-              php artisan key:generate
-            fi
+            # Install dependencies using local composer
+            php composer.phar install --no-dev --optimize-autoloader
             
-            # Run Laravel commands
+            # Laravel commands
+            php artisan key:generate --force
+            php artisan storage:link --force
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
-            php artisan storage:link
-            
-            # Run migrations
             php artisan migrate --force
+            
+            # Clear any previous caches
+            php artisan cache:clear
+            php artisan config:clear
+            php composer.phar dump-autoload -o
             
       - name: Copy Build Files
         uses: appleboy/scp-action@master
