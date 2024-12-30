@@ -7,7 +7,6 @@
     <title>{{ env('APP_NAME') }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <script>
         tailwind.config = {
             theme: {
