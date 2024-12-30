@@ -22,7 +22,7 @@
 <body>
     @include('partials.header')
 
-    <div class="container">
+    <div class="">
         @yield('content')
     </div>
 
