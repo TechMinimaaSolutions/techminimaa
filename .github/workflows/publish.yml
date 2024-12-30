@@ -3,13 +3,6 @@ name: HostingerDeploy
 on:
   push:
     branches: [main]
-    paths:
-      - 'app/**'
-      - 'routes/**'
-      - 'resources/**'
-      - 'database/migrations/**'
-      - 'config/**'
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
