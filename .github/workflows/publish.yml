@@ -70,11 +70,11 @@ jobs:
             LOG_LEVEL=error
 
             DB_CONNECTION=mysql
-            DB_HOST=193.203.184.211
-            DB_PORT=3306
-            DB_DATABASE=u938941419_techminimaa
-            DB_USERNAME=u938941419_techminimaa
-            DB_PASSWORD=Ashwanirai@1
+            DB_HOST=${{ secrets.DB_HOST }}
+            DB_PORT=${{ secrets.DB_PORT }}
+            DB_DATABASE=${{ secrets.DB_NAME }}
+            DB_USERNAME=${{ secrets.DB_USERNAME }}
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
 
             BROADCAST_DRIVER=log
             CACHE_DRIVER=file
