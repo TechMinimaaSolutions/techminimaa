@@ -4,32 +4,17 @@ on:
   push:
     branches: [main]
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0  # This ensures all history is fetched
+          fetch-depth: 0
           
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          
-      - name: Copy .env
-        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-        
-      - name: Install Dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-        
-      - name: Generate key
-        run: php artisan key:generate
-        
-      - name: Install SSH Key
-        run: |
-          mkdir -p ~/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -t rsa -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          tools: composer:v2 # Explicitly specify Composer 2
           
       - name: Deploy to Server
         uses: appleboy/ssh-action@master
@@ -39,15 +24,63 @@ jobs:
           port: 65002
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            # Navigate to the project directory
             cd domains/techminimaa.com
-            git fetch --all
+            
+            # If .git doesn't exist, initialize git
+            if [ ! -d .git ]; then
+              git init
+              git remote add origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            fi
+            
+            # Fetch and reset to match remote
+            git fetch origin main
+            git checkout main || git checkout -b main
             git reset --hard origin/main
-            composer install --no-interaction --prefer-dist --optimize-autoloader
-            php artisan migrate --force
+            
+            # Install Composer 2 if not already installed
+            if ! composer -V | grep -q "Composer version 2"; then
+              php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+              php composer-setup.php --install-dir=/usr/local/bin --filename=composer --2
+              php -r "unlink('composer-setup.php');"
+            fi
+            
+            # Create .env file if it doesn't exist
+            if [ ! -f .env ]; then
+              cp .env.example .env
+              # You might want to set your production environment variables here
+              sed -i 's/APP_ENV=local/APP_ENV=production/' .env
+              sed -i 's/APP_DEBUG=true/APP_DEBUG=false/' .env
+            fi
+            
+            # Install dependencies
+            composer install --no-dev --optimize-autoloader
+            
+            # Set proper permissions
+            chmod -R 755 storage bootstrap/cache
+            chmod -R 775 storage bootstrap/cache
+            
+            # Generate application key if not already set
+            if ! grep -q "^APP_KEY=" .env || grep -q "^APP_KEY=$" .env; then
+              php artisan key:generate
+            fi
+            
+            # Run Laravel commands
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
+            php artisan storage:link
+            
+            # Run migrations
+            php artisan migrate --force
             
       - name: Copy Build Files
-        run: |
-          rsync -avz -e "ssh -p ${{ secrets.SSH_PORT }}" ${{ github.workspace }}/public/build/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:~/domains/techminimaa.com/public/build
+        uses: appleboy/scp-action@master
+        with:
+          host: 147.93.17.126
+          username: u938941419
+          port: 65002
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "public/build/"
+          target: "domains/techminimaa.com/"
+          strip_components: 1
