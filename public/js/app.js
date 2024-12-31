@@ -17,11 +17,24 @@ toggleClose.addEventListener('click', handleClick);
 //for contact us today button
 function scrollToContact() {
   const contactSection = document.getElementById('contact');
-  const headerHeight = 80;
-  const elementPosition = contactSection.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-  window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-  });
+  
+  if (!contactSection) {
+      console.error('Contact section not found');
+      return;
+  }
+  
+  // Check for smooth scroll support
+  if ('scrollBehavior' in document.documentElement.style) {
+      contactSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+      });
+  } else {
+      // Fallback for browsers that don't support smooth scrolling
+      const headerHeight = 80;
+      const elementPosition = contactSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+      
+      window.scrollTo(0, offsetPosition);
+  }
 }
