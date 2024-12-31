@@ -57,5 +57,6 @@ $('.owl-prev,.owl-next').click(function () {
  $('.ques').click(function () {
   $(this).parent().toggleClass('active').find('.ans').slideToggle();
   $(this).parent().siblings(".faq-item").removeClass('active').find('.ans').slideUp();
+  
 });
 
