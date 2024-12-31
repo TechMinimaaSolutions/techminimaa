@@ -14,16 +14,28 @@
           <h1>Client-focused, customer-centric, creating website solutions that deliver tangible business results,
             Appnovation's web developers helps brands the ever-changing digital landscape.</h1>
           <div class="flex gap-y-4 gap-x-8 mt-8">
-            <button id="contactBtn"
-              class='bg-black hover:bg-[#222] text-white flex items-center transition-all font-semibold rounded-md px-3 py-3 text-sm md:text-lg md:px-5 md:py-3'>CONTACT
-              US TODAY
+            {{-- <button id="contactBtn"
+              class='bg-black hover:bg-[#222] text-white flex items-center transition-all font-semibold rounded-md px-3 py-3 text-sm md:text-lg md:px-5 md:py-3'>Let’s
+              GET IN TOUCH
               <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2" viewBox="0 0 492.004 492.004">
                 <path
                   d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
                   data-original="#000000" />
               </svg>
+            </button> --}}
+            <button href="/contact" id="contactBtn"
+              class="flex items-center group relative px-8 py-4 bg-[#00e9c2] text-black font-semibold rounded-none hover:bg-white transition-all duration-300">
+              Start Your Project
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2" viewBox="0 0 492.004 492.004">
+                <path
+                  d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
+                  data-original="#000000" />
+              </svg>
+              <div
+                class="absolute inset-0 border border-[#00e9c2] transform translate-x-1 translate-y-1 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300">
+              </div>
             </button>
-            <button
+            {{-- <button
               class='bg-transparent border-2 border-[#333] flex items-center transition-all font-semibold rounded-md px-3 py-2 md:px-5 md:py-3'>
               CHECK PACKAGES
               <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2" viewBox="0 0 492.004 492.004">
@@ -31,7 +43,7 @@
                   d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
                   data-original="#000000" />
               </svg>
-            </button>
+            </button> --}}
           </div>
         </div>
         <div class="max-lg:order-first lg:h-full">
@@ -414,7 +426,257 @@
   </div>
 </section>
 
-<section>
+<section class="bg-black py-16 px-4 md:px-8 ">
+
+
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="relative mb-20">
+      <div class="text-left">
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+          <span class="text-[#00e9c2]">Our</span> Tech Stack
+        </h2>
+        <div class="w-24 h-1 bg-[#00e9c2]"></div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Frontend Section -->
+      <div class=" p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 
+                        transition-all duration-500 transform bg-zinc-900 ">
+        <!-- Glowing effect on hover -->
+
+
+        <div class="mb-8 flex items-center">
+          <div class="w-2 h-8 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full mr-4 group-hover:animate-pulse">
+          </div>
+          <h2 class="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text 
+                               group-hover:bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300">
+            Frontend</h2>
+        </div>
+
+        <!-- Tech Grid -->
+
+
+        <div class="grid grid-cols-3 gap-6">
+          <!-- Tech Card with enhanced hover effects -->
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+                                hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/AngularJS-icon.webp"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+                                   transition-colors text-center">AngularJS</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+                                    rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+                    hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/react-colored-logo.svg"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+                       transition-colors text-center">ReactJS</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+                        rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+        hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://d1d5cy0fmpy9m8.cloudfront.net/images/1735643348Screenshot_(58).png"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+           transition-colors text-center">NextJs</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+            rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/html.webp" class="w-12 h-12 rounded mx-auto"
+                alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+   transition-colors text-center">HTML5</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+    rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/CSS3-1536x1536.png"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+   transition-colors text-center">CSS3</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+    rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/jslogo.png" class="w-12 h-12 rounded mx-auto"
+                alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+   transition-colors text-center">Javascript</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+    rounded-xl transition-all duration-500"></div>
+          </div>
+        </div>
+
+      </div>
+      <div class=" p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 
+            transition-all duration-500 transform bg-zinc-900 ">
+        <!-- Glowing effect on hover -->
+
+
+        <div class="mb-8 flex items-center">
+          <div class="w-2 h-8 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full mr-4 group-hover:animate-pulse">
+          </div>
+          <h2 class="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text 
+                   group-hover:bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300">Backend</h2>
+        </div>
+
+        <!-- Tech Grid -->
+        <div class="grid grid-cols-3 gap-6">
+          <!-- Tech Card with enhanced hover effects -->
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+        hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://d1d5cy0fmpy9m8.cloudfront.net/images/1735643472Screenshot_(59).png"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+           transition-colors text-center">Node.js</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+            rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+        hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/download.png"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+           transition-colors text-center">Laravel</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+            rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+        hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/PHP-logo.webp"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+           transition-colors text-center">Php</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+            rounded-xl transition-all duration-500"></div>
+          </div>
+
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+        hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/images.png" class="w-12 h-12 rounded mx-auto"
+                alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+           transition-colors text-center">.NET</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+            rounded-xl transition-all duration-500"></div>
+          </div>
+        </div>
+      </div>
+      <div class=" p-6 rounded-2xl border border-zinc-800 hover:border-blue-500 
+transition-all duration-500 transform  bg-zinc-900">
+        <!-- Glowing effect on hover -->
+
+
+        <div class="mb-8 flex items-center">
+          <div class="w-2 h-8 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full mr-4 group-hover:animate-pulse">
+          </div>
+          <h2 class="text-3xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text 
+       group-hover:bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300">Database & Servers</h2>
+        </div>
+
+        <!-- Tech Grid -->
+        <div class="grid grid-cols-3 gap-6">
+
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+  hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/mongodb-colored.svg"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+     transition-colors text-center">MongoDB</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+      rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/Postgresql.png.webp"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+   transition-colors text-center">Postgresql</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+    rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2023/11/mysql.webp" class="w-12 h-12 rounded mx-auto"
+                alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+   transition-colors text-center">MySQL</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+    rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://d1d5cy0fmpy9m8.cloudfront.net/images/1735643676Screenshot_(60).png"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+   transition-colors text-center">SQL Server</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+    rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2024/03/Linux-Server.jpg.webp"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+   transition-colors text-center">Linux</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+    rounded-xl transition-all duration-500"></div>
+          </div>
+          <div class="tech-card group/item relative overflow-hidden rounded-xl  p-4 
+hover:bg-gray-900/50 transition-all duration-500">
+            <div class="transform transition-transform duration-500 group-hover/item:scale-110">
+              <img src="https://gomilestone.com/wp-content/uploads/2024/03/windows-hosting.png.webp"
+                class="w-12 h-12 rounded mx-auto" alt="AngularJS">
+            </div>
+            <h3 class="text-gray-200 mt-4 text-sm font-medium group-hover/item:text-blue-400 
+   transition-colors text-center">Window</h3>
+            <div class="absolute inset-0 border border-blue-500/0 group-hover/item:border-blue-500/50 
+    rounded-xl transition-all duration-500"></div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 
 </section>
 
@@ -447,10 +709,10 @@
 
                   <p class="mb-4">
                     Complete the form, email us at
-                    <a href="mailto:contact@appnovation.com" class="text-blue-600 hover:text-blue-800">
-                      contact@appnovation.com
+                    <a href="mailto:contact@techminimaa.com" class="text-blue-600 hover:text-blue-800">
+                      contact@techminimaa.com
                     </a>
-                    or contact us directly by phone at one of our many
+                    or contact us directly by phone at one of our
                     <a href="https://www.appnovation.com/contact-us" class="text-blue-600 hover:text-blue-800">
                       global office locations
                     </a>
@@ -534,14 +796,23 @@
                       <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                     </svg>
                     <span class="text-gray-700 text-md text-white">Or email us at</span>
-                    <a href="mailto:contact@appnovation.com"
+                    <a href="mailto:contact@techminimaa.com"
                       class="text-[#00e9c2] hover:text-[#baf7e7] text-sm underline transition-colors duration-200">
-                      contact@appnovation.com
+                      contact@techminimaa.com
                     </a>
                   </div>
-                  <button type="submit"
-                    class="bg-[#00e9c2] hover:bg-[#baf7e7] text-gray-800 px-10 py-4 rounded-md transition-colors duration-200 uppercase text-sm font-normal tracking-wider order-1">
+                  <button href="/contact" id="contactBtn"
+                    class="flex items-center group relative px-8 py-4 bg-[#00e9c2] text-black font-semibold rounded-none hover:bg-white transition-all duration-300">
                     Submit Now
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2"
+                      viewBox="0 0 492.004 492.004">
+                      <path
+                        d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
+                        data-original="#000000" />
+                    </svg>
+                    <div
+                      class="absolute inset-0 border border-[#00e9c2] transform translate-x-1 translate-y-1 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300">
+                    </div>
                   </button>
                 </div>
               </form>
@@ -552,25 +823,4 @@
     </div>
   </div>
 </section>
-{{-- <script>
-   document.addEventListener('DOMContentLoaded', function() {
-      const contactBtn = document.getElementById('contactBtn');
-      
-      if (contactBtn) {
-          contactBtn.addEventListener('click', function() {
-              const contactSection = document.getElementById('contact');
-              
-              if (!contactSection) {
-                  console.error('Contact section not found');
-                  return;
-              }
-              
-              contactSection.scrollIntoView({ 
-                  behavior: 'smooth',
-                  block: 'start'
-              });
-          });
-      }
-  });
-</script> --}}
 @endsection
