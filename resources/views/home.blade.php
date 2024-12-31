@@ -14,7 +14,7 @@
           <h1>Client-focused, customer-centric, creating website solutions that deliver tangible business results,
             Appnovation's web developers helps brands the ever-changing digital landscape.</h1>
           <div class="flex gap-y-4 gap-x-8 mt-8">
-            <button onclick="scrollToContact()"
+            <button id="contactBtn"
               class='bg-black hover:bg-[#222] text-white flex items-center transition-all font-semibold rounded-md px-3 py-3 text-sm md:text-lg md:px-5 md:py-3'>CONTACT
               US TODAY
               <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2" viewBox="0 0 492.004 492.004">
@@ -554,21 +554,24 @@
 </section>
 
 <script>
-  function scrollToContact() {
-  const contactSection = document.getElementById('contact');
-  if (!contactSection) {
-      console.error('Contact section not found');
-      return;
-  }
-  
-  const headerHeight = 80;
-  const elementPosition = contactSection.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-  
-  window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
+  document.addEventListener('DOMContentLoaded', function() {
+      const contactBtn = document.getElementById('contactBtn');
+      
+      if (contactBtn) {
+          contactBtn.addEventListener('click', function() {
+              const contactSection = document.getElementById('contact');
+              
+              if (!contactSection) {
+                  console.error('Contact section not found');
+                  return;
+              }
+              
+              contactSection.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+              });
+          });
+      }
   });
-}
 </script>
 @endsection
