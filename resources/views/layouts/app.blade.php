@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="{{ asset(app()->environment('local') ? 'css/app.css' : 'public/css/app.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css" rel="stylesheet">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js">
+    </script>
     <script>
         tailwind.config = {
             theme: {
@@ -30,7 +32,7 @@
     </div>
 
     @include('partials.footer')
-    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
     <script src="{{ asset(app()->environment('local') ? 'js/app.js' : 'public/js/app.js') }}" ></script>
 </body>
 </html>
