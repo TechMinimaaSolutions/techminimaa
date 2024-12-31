@@ -2,7 +2,7 @@
 var toggleOpen = document.getElementById('toggleOpen');
 var toggleClose = document.getElementById('toggleClose');
 var collapseMenu = document.getElementById('collapseMenu');
-const contactBtn = document.getElementById('contactBtn');
+var contactBtn = document.getElementById('contactBtn');
 
 function handleClick() {
   if (collapseMenu.style.display === 'block') {
