@@ -36,9 +36,4 @@ jobs:
             php artisan route:cache
             # php artisan optimize:clear
 
-            # Set permissions
-            chmod -R 755 public
-            chmod 644 public/js/app.js
             
-            # Touch files to clear cache
-            touch public/js/app.js
