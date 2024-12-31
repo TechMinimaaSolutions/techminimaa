@@ -426,11 +426,11 @@
   </div>
 </section>
 
-<section class="bg-black py-16 px-4 md:px-8 ">
+<section class="bg-black py-4 lg:py-16 px-4 md:px-8 ">
 
 
   <div class="max-w-7xl mx-auto relative z-10">
-    <div class="relative mb-20">
+    <div class="relative mb-10 mt-6 lg:mt-0">
       <div class="text-left">
         <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
           <span class="text-[#00e9c2]">Our</span> Tech Stack
