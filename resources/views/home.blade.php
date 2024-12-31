@@ -46,7 +46,7 @@
             </button> --}}
           </div>
         </div>
-        <div class="max-lg:order-first lg:h-full">
+        <div class="max-lg:order-first hidden md:block lg:h-full">
           <div class="relative h-[130px] lg:h-[480px] w-full">
             <img src="https://d1d5cy0fmpy9m8.cloudfront.net/images/1735627971download.jpg" alt="banner img"
               class="w-full h-full object-contain lg:object-cover" />
