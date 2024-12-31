@@ -29,6 +29,6 @@
 
     @include('partials.footer')
 
-    <script src="{{ asset('js/app.js') }}?v={{ time() }}" defer></script>
+    <script src="{{ asset('public/js/app.js') }}?v={{ time() }}" defer></script>
 </body>
 </html>
