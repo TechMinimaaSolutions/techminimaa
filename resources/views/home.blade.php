@@ -842,11 +842,18 @@ hover:bg-gray-900/50 transition-all duration-500">
 </main>
 </section>
 
-<section id="contact">
-  <div class="w-full bg-black py-16">
-    <div class="w-full" id="contact">
+<section id="contact" class="bg-black">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-14 py-4">
+      <div class="relative mb-10 mt-6 lg:mt-0">
+        <div class="text-left">
+          <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+            <span class="text-[#00e9c2]">Contact</span> Us
+          </h2>
+          <div class="w-24 h-1 bg-[#00e9c2]"></div>
+        </div>
+      </div>
       <div class="pardot-form w-full">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="">
           <div class="flex flex-wrap -mx-4">
             <!-- Left Column -->
             <div class="w-full lg:w-5/12 md:w-5/12 px-4 mb-8 lg:mb-0">
@@ -983,6 +990,5 @@ hover:bg-gray-900/50 transition-all duration-500">
         </div>
       </div>
     </div>
-  </div>
 </section>
 @endsection
