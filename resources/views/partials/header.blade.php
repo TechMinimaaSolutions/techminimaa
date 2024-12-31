@@ -87,7 +87,7 @@
 
     <div class='flex ml-auto'>
 
-      <button href="/contact" id="contactBtn"
+      <button href="/contact" id=""
         class="hidden md:flex items-center group relative px-8 py-2.5 bg-[#00e9c2] text-black font-semibold rounded-none hover:bg-white transition-all duration-300">
         <span>Get Started</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2" viewBox="0 0 492.004 492.004">
