@@ -83,7 +83,7 @@
 
     <div class='flex ml-auto'>
       <button
-        class='bg-blue-500 hover:bg-blue-700 text-white flex items-center transition-all font-semibold rounded-md px-5 py-3'>Get
+        class='bg-blue-500 hover:bg-blue-700 hidden md:block text-white flex items-center transition-all font-semibold rounded-md px-5 py-3'>Get
         started
         <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2" viewBox="0 0 492.004 492.004">
           <path
