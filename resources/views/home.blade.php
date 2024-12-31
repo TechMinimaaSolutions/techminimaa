@@ -991,4 +991,93 @@ hover:bg-gray-900/50 transition-all duration-500">
       </div>
     </div>
 </section>
+
+<section class="bg-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-14 py-4">
+    <div class="relative mb-10 mt-6 lg:mt-0">
+      <div class="text-left">
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+          <span class="text-[#00e9c2]">Web </span>Development FAQs
+        </h2>
+        <div class="w-24 h-1 bg-[#00e9c2]"></div>
+      </div>
+    </div>
+    <div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+      <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+          <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What is web development?</h3>
+          <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
+               alt="down-arrow" 
+               class="w-6 h-6">
+      </div>
+      <div class="ans hidden p-4 md:p-5">
+          <p class="text-sm">Web development is the process of building, programming, and maintaining websites and web applications. Web developers use various coding and programming languages, like HTML, to build sites and applications.</p>
+      </div>
+  </div>
+  <div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+    <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+        <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What are web development services?</h3>
+        <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
+             alt="down-arrow" 
+             class="w-6 h-6">
+    </div>
+    <div class="ans hidden p-4 md:p-5">
+        <p class="text-sm">Web development services are services provided by an agency, company, or freelancer that help you build your website, implement various website functions and applications, and maintain your site.</p>
+    </div>
+</div>
+
+<div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+  <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+      <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What’s the difference between web development and web design? </h3>
+      <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
+           alt="down-arrow" 
+           class="w-6 h-6">
+  </div>
+  <div class="ans hidden p-4 md:p-5">
+      <p class="text-sm">Web design refers to the aesthetic appearance of your website, like the colors and placement of your buttons, the look of your header and footer banners, and more. Web development refers to the functionality of your website, like ensuring your buttons route users to the correct place. Web designers essentially create the look of your site, and web developers use coding and programming languages to make that look come to life and function correctly as a website.</p>
+  </div>
+</div>
+
+<div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+  <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+      <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What is the average cost of web development services?</h3>
+      <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
+           alt="down-arrow" 
+           class="w-6 h-6">
+  </div>
+  <div class="ans hidden p-4 md:p-5">
+      <p class="text-sm">The average cost of web development services can range anywhere from $1,000 – $145,000 per website. How much you’ll pay depends on several factors, like the scope of your project, the size of your website, your chosen web development agency, and more!</p>
+  </div>
+</div>
+
+<div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+  <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+      <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What are the different types of web development services?</h3>
+      <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
+           alt="down-arrow" 
+           class="w-6 h-6">
+  </div>
+  <div class="ans hidden p-4 md:p-5">
+    <div class="_panel-body ">
+      <div class="_text">
+        <p class="text-lg">The different types of web development services include:</p>
+<ul class="list-disc ml-6">
+<li>Responsive design</li>
+<li>Ecommerce functionality</li>
+<li>Website call tracking</li>
+<li>CMS development and integration</li>
+<li>Website security</li>
+<li>Website maintenance</li>
+<li>Design functionality</li>
+<li>Marketing automation</li>
+<li>Company targeting</li>
+<li>Mobile app development</li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div>
+</section>
 @endsection

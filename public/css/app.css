@@ -244,3 +244,28 @@ h4 {
 
    
 }
+
+
+
+/* faq css  */
+.faq-item.active {
+    border-radius: 14px;
+}
+
+.faq-item.active .ques {
+    border-radius: 14px 14px 0px 0px;
+    background-color: #00e9c2;
+}
+
+.faq-item.active .ques h3 {
+    color: #010000;
+}
+
+.faq-item.active .ques img {
+    filter: invert(1);
+    transform: rotate(180deg);
+}
+
+.ques img {
+    transition: 1s all;
+}
