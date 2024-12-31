@@ -1,4 +1,53 @@
 
+.review-container ul,
+.review-container li,
+.review-container p {
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #f7f2f2;
+    font-size: 14px;
+}
+
+.review-container ul {
+    padding: 0;
+}
+
+.review-container  ul li {
+    list-style: none;
+}
+
+.review-container  p strong,
+.review-container  p b {
+    font-weight: 700;
+}
+
+.review-container  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.review-container  h1,
+h2,
+h3,
+h4 {
+    margin: 0;
+}
+
+.review-container  h2 {
+    font-weight: 600;
+    font-style: normal;
+}
+
+.review-container  button {
+    border: 0;
+    cursor: pointer;
+}
+
+
+
+
 .sap-fico .review .review-container,
 .sap-fico .review .info,
 .sap-fico .review .content-list,
