@@ -3,7 +3,6 @@ name: HostingerDeploy
 on:
   push:
     branches: [main]
-    # Only trigger deployment for these file changes
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -30,10 +29,10 @@ jobs:
             # mv .env.backup .env
             
             # Clear and update Laravel cache
-            # php artisan config:clear
-            # php artisan cache:clear
-            # php artisan view:clear
-            # php artisan config:cache
-            # php artisan route:cache
-            php artisan optimize:clear
+            php artisan config:clear
+            php artisan cache:clear
+            php artisan view:clear
+            php artisan config:cache
+            php artisan route:cache
+            # php artisan optimize:clear
        
