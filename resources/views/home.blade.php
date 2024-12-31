@@ -552,7 +552,7 @@
     </div>
   </div>
 </section>
-<script>
+{{-- <script>
    document.addEventListener('DOMContentLoaded', function() {
       const contactBtn = document.getElementById('contactBtn');
       
@@ -572,5 +572,5 @@
           });
       }
   });
-</script>
+</script> --}}
 @endsection

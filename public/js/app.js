@@ -15,4 +15,14 @@ toggleOpen.addEventListener('click', handleClick);
 toggleClose.addEventListener('click', handleClick);
 
 //for contact us today button
- 
+document.addEventListener('DOMContentLoaded', function() {
+  const contactBtn = document.getElementById('contactBtn');
+  if (contactBtn) {
+      contactBtn.addEventListener('click', function() {
+          document.getElementById('contact')?.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+          });
+      });
+  }
+});
