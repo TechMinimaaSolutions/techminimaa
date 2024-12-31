@@ -28,6 +28,6 @@
 
     @include('partials.footer')
 
-    <script src="{{ asset('public/js/app.js') }}" defer></script>
+    <script src="{{ asset(app()->environment('local') ? 'js/app.js' : 'public/js/app.js') }}" defer></script>
 </body>
 </html>
