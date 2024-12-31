@@ -426,10 +426,8 @@
   </div>
 </section>
 
-<section class="bg-black py-4 lg:py-16 px-4 md:px-8 ">
-
-
-  <div class="max-w-7xl mx-auto relative z-10">
+<section class="bg-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-16 py-6 relative z-10">
     <div class="relative mb-10 mt-6 lg:mt-0">
       <div class="text-left">
         <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
@@ -679,8 +677,8 @@ hover:bg-gray-900/50 transition-all duration-500">
   </div>
 
 </section>
-<section class="bg-black py-4 lg:py-10 px-4 md:px-8 ">
-  <main class="sap-fico ">
+<section class="bg-black">
+  <main class="sap-fico max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-16 py-6">
     <div class="relative mb-10 mt-6 lg:mt-0">
       <div class="text-left">
         <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
