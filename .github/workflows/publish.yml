@@ -3,11 +3,16 @@ name: HostingerDeploy
 on:
   push:
     branches: [main]
+  workflow_dispatch: # Allows manual trigger
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy Code Changes
+      - name: 🚀 Starting Deployment
+        run: echo "Starting deployment process..."
+
+      - name: 📂 Deploy to Hostinger
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -15,24 +20,69 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            # Go to your project directory
+            # Print start time
+            echo "Deployment started at $(date)"
+            
+            # Go to project directory
             cd domains/techminimaa.com/public_html
             
-            # Backup current .env
-            # cp .env .env.backup
+            # Backup important files
+            if [ -f ".env" ]; then
+              cp .env .env.backup
+            fi
             
-            # Get only the new changes
+            # Pull changes
+            echo "Pulling latest changes..."
             git fetch origin main
             git reset --hard origin/main
             
             # Restore .env
-            # mv .env.backup .env
+            if [ -f ".env.backup" ]; then
+              mv .env.backup .env
+            fi
             
-            # Clear and update Laravel cache
+            # Clear all caches
+            echo "Clearing caches..."
             php artisan config:clear
             php artisan cache:clear
             php artisan view:clear
+            php artisan route:clear
+            
+            # Clear opcache if installed
+            if [ -f /usr/bin/php ]; then
+                php -r 'if(function_exists("opcache_reset")) { opcache_reset(); }'
+            fi
+            
+            # Set proper permissions
+            echo "Setting permissions..."
+            find . -type f -exec chmod 644 {} \;
+            find . -type d -exec chmod 755 {} \;
+            
+            # Give write permissions to storage and cache
+            chmod -R 775 storage bootstrap/cache
+            
+            # Clear browser cache for js/css files
+            echo "Updating asset versions..."
+            TIMESTAMP=$(date +%s)
+            if [ -f "public/js/app.js" ]; then
+                touch -m public/js/app.js
+            fi
+            
+            # Rebuild cache
+            echo "Rebuilding cache..."
             php artisan config:cache
             php artisan route:cache
-            # php artisan optimize:clear
-       
+            
+            # Verify deployment
+            echo "Verifying deployment..."
+            if [ -f "public/js/app.js" ]; then
+                echo "app.js exists and was last modified: $(stat -c %y public/js/app.js)"
+            else
+                echo "Warning: app.js not found"
+            fi
+            
+            # Print completion time
+            echo "Deployment completed at $(date)"
+
+      - name: ✅ Deployment Status
+        run: echo "Deployment completed successfully"
