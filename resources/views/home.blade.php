@@ -552,5 +552,25 @@
     </div>
   </div>
 </section>
-
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+      const contactBtn = document.getElementById('contactBtn');
+      
+      if (contactBtn) {
+          contactBtn.addEventListener('click', function() {
+              const contactSection = document.getElementById('contact');
+              
+              if (!contactSection) {
+                  console.error('Contact section not found');
+                  return;
+              }
+              
+              contactSection.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+              });
+          });
+      }
+  });
+</script>
 @endsection
