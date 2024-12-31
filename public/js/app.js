@@ -23,3 +23,32 @@ contactBtn.addEventListener('click', function () {
   });
 });
 
+// Start Review Script
+$('.owl-carousel').owlCarousel({
+  loop: true,
+  responsiveClass: true,
+  dots: false,
+  nav: true,
+  smartSpeed: 1000,
+  navText: [" ", " "],
+  items: 1,
+  autoplay: true,
+  responsive: {
+      768: {
+          items: 2,
+      },
+      1024: {
+          items: 3,
+      }
+  }
+});
+setInterval(function () {
+  var target = $(".owl-item.active .review-item").data('target');
+  $(".content-list").find("#" + target).show().siblings().hide();
+}, 100);
+$('.owl-next').addClass("btn-active");
+$('.owl-prev,.owl-next').click(function () {
+  $(this).addClass("btn-active").siblings().removeClass("btn-active");
+});
+// End Review Script
+
