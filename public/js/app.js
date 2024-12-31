@@ -17,7 +17,7 @@ toggleClose.addEventListener('click', handleClick);
 //for contact us today button
 var contactBtn = document.getElementById('contactBtn');
 contactBtn.addEventListener('click', function () {
-  console.log('clicked');
+  console.log('clickessd');
   document.getElementById('contact')?.scrollIntoView({
     behavior: 'smooth',
     block: 'start'
