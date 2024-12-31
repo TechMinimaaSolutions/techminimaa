@@ -552,4 +552,23 @@
     </div>
   </div>
 </section>
+
+<script>
+  function scrollToContact() {
+  const contactSection = document.getElementById('contact');
+  if (!contactSection) {
+      console.error('Contact section not found');
+      return;
+  }
+  
+  const headerHeight = 80;
+  const elementPosition = contactSection.getBoundingClientRect().top;
+  const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+  
+  window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+  });
+}
+</script>
 @endsection
