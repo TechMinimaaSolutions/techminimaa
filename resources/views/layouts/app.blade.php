@@ -32,7 +32,15 @@
     </div>
 
     @include('partials.footer')
-<script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
     <script src="{{ asset(app()->environment('local') ? 'js/app.js' : 'public/js/app.js') }}" ></script>
+    <script>
+        // FAQ Script
+ $('.ques').click(function () {
+  $(this).parent().toggleClass('active').find('.ans').slideToggle();
+  $(this).parent().siblings(".faq-item").removeClass('active').find('.ans').slideUp();
+  
+});
+    </script>
 </body>
 </html>
