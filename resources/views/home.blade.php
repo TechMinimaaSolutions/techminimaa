@@ -49,7 +49,7 @@
         <div class="max-lg:order-first hidden md:block lg:h-full">
           <div class="relative h-[130px] lg:h-[480px] w-full">
             <img src="https://d1d5cy0fmpy9m8.cloudfront.net/images/1735627971download.jpg" alt="banner img"
-              class="w-full h-full object-contain lg:object-cover" />
+              class="w-full h-full object-contain lg:object-cover rounded" />
             <!-- Optional: Add an overlay effect -->
             <div class="absolute inset-0 bg-gradient-to-t from-blue-100/20 to-transparent rounded-lg"></div>
           </div>
