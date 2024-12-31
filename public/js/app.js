@@ -15,19 +15,3 @@ toggleOpen.addEventListener('click', handleClick);
 toggleClose.addEventListener('click', handleClick);
 
 //for contact us today button
-function scrollToContact() {
-  const contactSection = document.getElementById('contact');
-  if (!contactSection) {
-      console.error('Contact section not found');
-      return;
-  }
-  
-  const headerHeight = 80;
-  const elementPosition = contactSection.getBoundingClientRect().top;
-  const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-  
-  window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-  });
-}
