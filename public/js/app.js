@@ -20,6 +20,7 @@ toggleClose.addEventListener('click', handleClick);
 
 
 contactBtn.addEventListener('click', function () {
+  console.log('clicked');
   document.getElementById('contact')?.scrollIntoView({
     behavior: 'smooth',
     block: 'start'
