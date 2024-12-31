@@ -68,7 +68,7 @@
           class="bg-zinc-900 border border-zinc-800 p-8 rounded-lg hover:bg-zinc-800 transition-all duration-300 relative overflow-hidden">
           <!-- Service Number -->
           <div
-            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-800 group-hover:text-zinc-700 transition-colors duration-300">
+            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-700 group-hover:text-zinc-600 transition-colors duration-300">
             01
           </div>
 
@@ -103,7 +103,7 @@
           class="bg-zinc-900 border border-zinc-800 p-8 rounded-lg hover:bg-zinc-800 transition-all duration-300 relative overflow-hidden">
           <!-- Service Number -->
           <div
-            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-800 group-hover:text-zinc-700 transition-colors duration-300">
+            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-700 group-hover:text-zinc-600 transition-colors duration-300">
             02
           </div>
 
@@ -138,7 +138,7 @@
           class="bg-zinc-900 border border-zinc-800 p-8 rounded-lg hover:bg-zinc-800 transition-all duration-300 relative overflow-hidden">
           <!-- Service Number -->
           <div
-            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-800 group-hover:text-zinc-700 transition-colors duration-300">
+            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-700 group-hover:text-zinc-600 transition-colors duration-300">
             03
           </div>
 
@@ -173,7 +173,7 @@
           class="bg-zinc-900 border border-zinc-800 p-8 rounded-lg hover:bg-zinc-800 transition-all duration-300 relative overflow-hidden">
           <!-- Service Number -->
           <div
-            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-800 group-hover:text-zinc-700 transition-colors duration-300">
+            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-700 group-hover:text-zinc-600 transition-colors duration-300">
             04
           </div>
 
@@ -208,7 +208,7 @@
           class="bg-zinc-900 border border-zinc-800 p-8 rounded-lg hover:bg-zinc-800 transition-all duration-300 relative overflow-hidden">
           <!-- Service Number -->
           <div
-            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-800 group-hover:text-zinc-700 transition-colors duration-300">
+            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-700 group-hover:text-zinc-600 transition-colors duration-300">
             05
           </div>
 
@@ -243,7 +243,7 @@
           class="bg-zinc-900 border border-zinc-800 p-8 rounded-lg hover:bg-zinc-800 transition-all duration-300 relative overflow-hidden">
           <!-- Service Number -->
           <div
-            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-800 group-hover:text-zinc-700 transition-colors duration-300">
+            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-700 group-hover:text-zinc-600 transition-colors duration-300">
             06
           </div>
 
@@ -278,7 +278,7 @@
           class="bg-zinc-900 border border-zinc-800 p-8 rounded-lg hover:bg-zinc-800 transition-all duration-300 relative overflow-hidden">
           <!-- Service Number -->
           <div
-            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-800 group-hover:text-zinc-700 transition-colors duration-300">
+            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-700 group-hover:text-zinc-600 transition-colors duration-300">
             07
           </div>
 
@@ -314,7 +314,7 @@
           class="bg-zinc-900 border border-zinc-800 p-8 rounded-lg hover:bg-zinc-800 transition-all duration-300 relative overflow-hidden">
           <!-- Service Number -->
           <div
-            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-800 group-hover:text-zinc-700 transition-colors duration-300">
+            class="absolute -top-4 -left-4 text-8xl font-bold text-zinc-700 group-hover:text-zinc-600 transition-colors duration-300">
             08
           </div>
 

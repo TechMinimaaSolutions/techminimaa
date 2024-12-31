@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ env('APP_NAME') }}</title>
-    <meta name="version" content="{{ time() }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script>
@@ -29,6 +28,6 @@
 
     @include('partials.footer')
 
-    <script src="{{ asset('public/js/app.js') }}?v={{ time() }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
