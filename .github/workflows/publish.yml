@@ -27,7 +27,10 @@ jobs:
             
             # Restore .env
             # mv .env.backup .env
-            
+            php artisan storage:link
+
+            mkdir -p storage/app/public/uploads
+            chmod -R 775 storage
             # Clear and update Laravel cache
             php artisan config:clear
             php artisan cache:clear

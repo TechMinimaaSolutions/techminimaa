@@ -21,4 +21,6 @@ Route::get('/services', function () {
     return view('services');
 });
 
+Route::get('/upload', [ImageUploadController::class, 'showUploadForm'])->name('upload.form');
+Route::post('/upload', [ImageUploadController::class, 'uploadImage'])->name('upload.image');
 
