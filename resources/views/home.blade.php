@@ -1080,4 +1080,50 @@ hover:bg-gray-900/50 transition-all duration-500">
 
   </div>
 </section>
+<section class="newslettersection bg-black text-white py-20">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="flex items-center">
+        <img src="assets/images/mail-ico.svg" alt="email icon" class="h-12 w-12 mr-4">
+        <article>
+          <h3 class="text-2xl font-bold mb-2">Stay updated</h3>
+          <p>Unplug, Untie and Unwind...it's that simple.</p>
+        </article>
+      </div>
+      <div class="pt-3 md:pt-0">
+        <form id="subscribeCall" class="flex flex-col md:flex-row">
+          <div class="md:w-2/3">
+            <div class="relative">
+              <input 
+                required="" 
+                type="email" 
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                name="email" 
+                class="form-control bg-transparent border border-white rounded-md py-2 px-4 w-full focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                id="floatingInput" 
+                placeholder=" "
+              >
+              <label 
+                for="floatingInput" 
+                class="absolute left-4 -top-3 text-gray-400 text-sm transition-all transform bg-black px-2 py-1 rounded-md pointer-events-none"
+              >
+                Email address
+              </label>
+            </div>
+          </div>
+          <div class="md:w-1/3 mt-4 md:mt-0 ml-0 md:ml-4 flex flex-col items-center md:items-start">
+            <input 
+              type="submit" 
+              name="submit" 
+              class="custom_button nwsltrsubmit bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md cursor-pointer" 
+              value="Subscribe now"
+            >
+            <div class="loading mt-2"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 @endsection
