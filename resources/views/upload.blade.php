@@ -64,40 +64,39 @@
     </div>
 
     <script>
-        $(document).ready(function() {
-            $('#uploadForm').on('submit', function(e) {
-                e.preventDefault();
-                
-                let formData = new FormData();
-                formData.append('image', $('#image')[0].files[0]);
-                formData.append('_token', $('input[name="_token"]').val());
+       $(document).ready(function() {
+    $('#uploadForm').on('submit', function(e) {
+        e.preventDefault();
+        
+        let formData = new FormData();
+        formData.append('image', $('#image')[0].files[0]);
+        formData.append('_token', $('input[name="_token"]').val());
 
-                $.ajax({
-                    url: '{{ route("upload.image") }}',
-                    type: 'POST',
-                    data: formData,
-                    contentType: false,
-                    processData: false,
-                    success: function(response) {
-                        if(response.success) {
-                            $('#imagePreview').attr('src', response.url);
-                            $('#imageUrl').val(window.location.origin + response.url);
-                            $('#previewArea').removeClass('hidden');
-                        }
-                    },
-                    error: function(xhr) {
-                        alert('Upload failed. Please try again.');
+        $.ajax({
+            url: '{{ route("upload.image") }}',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                if(response.success) {
+                    // Remove any potential double domain
+                    let imageUrl = response.url;
+                    if (imageUrl.includes(window.location.origin)) {
+                        imageUrl = imageUrl.replace(window.location.origin, '');
                     }
-                });
-            });
+                    
+                    $('#imagePreview').attr('src', imageUrl);
+                    $('#imageUrl').val(window.location.origin + imageUrl);
+                    $('#previewArea').removeClass('hidden');
+                }
+            },
+            error: function(xhr) {
+                alert('Upload failed. Please try again.');
+            }
         });
-
-        function copyUrl() {
-            const urlInput = document.getElementById('imageUrl');
-            urlInput.select();
-            document.execCommand('copy');
-            alert('URL copied to clipboard!');
-        }
+    });
+});
     </script>
 </body>
 </html>

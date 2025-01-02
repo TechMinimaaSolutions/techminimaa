@@ -20,17 +20,14 @@ class ImageUploadController extends Controller
 
         try {
             if ($request->hasFile('image')) {
-                // Get file from request
                 $file = $request->file('image');
-                
-                // Generate unique filename
                 $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
                 
-                // Store file in public/uploads directory
-                $file->storeAs('public/uploads', $fileName);
+                // Store in the correct location
+                $path = $file->storeAs('uploads', $fileName, 'public');
                 
-                // Generate public URL
-                $url = Storage::url('uploads/' . $fileName);
+                // Generate correct URL
+                $url = Storage::disk('public')->url($path);
                 
                 return response()->json([
                     'success' => true,
