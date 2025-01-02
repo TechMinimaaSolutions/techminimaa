@@ -23,11 +23,11 @@ class ImageUploadController extends Controller
                 $file = $request->file('image');
                 $fileName = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
                 
-                // Store in the correct location
+                // Store the file in the correct path
                 $path = $file->storeAs('uploads', $fileName, 'public');
                 
-                // Generate correct URL
-                $url = Storage::disk('public')->url($path);
+                // Generate the correct URL using storage_path
+                $url = '/storage/app/public/' . $path;
                 
                 return response()->json([
                     'success' => true,
