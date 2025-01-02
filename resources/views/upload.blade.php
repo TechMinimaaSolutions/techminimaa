@@ -54,7 +54,7 @@
                                class="w-full pr-20 border rounded-lg px-3 py-2 text-sm" 
                                readonly>
                         <button onclick="copyUrl()" 
-                                class="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-[#00e9c2] hover:text-[#00e9c2]/90">
+                                class="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-[#00e9c2] hover:text-[#00e9c2]/90 transition-colors duration-200">
                             Copy URL
                         </button>
                     </div>
@@ -64,39 +64,65 @@
     </div>
 
     <script>
-       $(document).ready(function() {
-    $('#uploadForm').on('submit', function(e) {
-        e.preventDefault();
+        $(document).ready(function() {
+            $('#uploadForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                let formData = new FormData();
+                formData.append('image', $('#image')[0].files[0]);
+                formData.append('_token', $('input[name="_token"]').val());
         
-        let formData = new FormData();
-        formData.append('image', $('#image')[0].files[0]);
-        formData.append('_token', $('input[name="_token"]').val());
-
-        $.ajax({
-            url: '{{ route("upload.image") }}',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                if(response.success) {
-                    // Remove any potential double domain
-                    let imageUrl = response.url;
-                    if (imageUrl.includes(window.location.origin)) {
-                        imageUrl = imageUrl.replace(window.location.origin, '');
+                $.ajax({
+                    url: '{{ route("upload.image") }}',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function(response) {
+                        if(response.success) {
+                            // Get the full URL including domain
+                            const fullUrl = window.location.origin + response.url;
+                            
+                            $('#imagePreview').attr('src', response.url);
+                            $('#imageUrl').val(fullUrl);
+                            $('#previewArea').removeClass('hidden');
+                        }
+                    },
+                    error: function(xhr) {
+                        alert('Upload failed. Please try again.');
                     }
-                    
-                    $('#imagePreview').attr('src', imageUrl);
-                    $('#imageUrl').val(window.location.origin + imageUrl);
-                    $('#previewArea').removeClass('hidden');
-                }
-            },
-            error: function(xhr) {
-                alert('Upload failed. Please try again.');
-            }
+                });
+            });
         });
-    });
-});
-    </script>
+        
+        // Modern clipboard copy function
+        async function copyUrl() {
+            try {
+                const urlInput = document.getElementById('imageUrl');
+                await navigator.clipboard.writeText(urlInput.value);
+                
+                // Show feedback
+                const copyButton = document.querySelector('button[onclick="copyUrl()"]');
+                const originalText = copyButton.textContent;
+                copyButton.textContent = 'Copied!';
+                
+                // Reset button text after 2 seconds
+                setTimeout(() => {
+                    copyButton.textContent = originalText;
+                }, 2000);
+                
+            } catch (err) {
+                // Fallback for older browsers
+                const urlInput = document.getElementById('imageUrl');
+                urlInput.select();
+                try {
+                    document.execCommand('copy');
+                    alert('URL copied to clipboard!');
+                } catch (err) {
+                    alert('Failed to copy URL. Please copy manually.');
+                }
+            }
+        }
+        </script>
 </body>
 </html>
