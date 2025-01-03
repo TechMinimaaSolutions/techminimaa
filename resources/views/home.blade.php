@@ -59,6 +59,7 @@
   </div>
 </section>
 <!-- Main Wrapper -->
+
 <section class="bg-black py-20">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header Section -->
@@ -688,310 +689,387 @@ hover:bg-gray-900/50 transition-all duration-500">
       </div>
     </div>
     <section class="review" id="review">
-        <div class="container">
-            <div class="review-container">
-              
-                <div class="review-list owl-carousel">
-                    <div class="review-item" data-target="0">
-                        <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/harry.png"
-                                alt="harry"></span>
-                        <div class="info">
-                            <h3>Harry Thomas</h3>
-                            <p>SAP FICO Manager</p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-target="1">
-                        <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/oscar.png"
-                                alt="oscar"></span>
-                        <div class="info">
-                            <h3>Oscar Finley</h3>
-                            <p>SAP FICO Analyst</p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-target="2">
-                        <span> <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/amelia.png"
-                                alt="amelia"></span>
-                        <div class="info">
-                            <h3>Amelia Louis</h3>
-                            <p>Programme Manager</p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-target="3">
-                        <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/florence.png"
-                                alt="florence"></span>
-                        <div class="info">
-                            <h3>Florence Blake</h3>
-                            <p>SAP FICO Lead</p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-target="4">
-                        <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/archie.png"
-                                alt="archie"></span>
-                        <div class="info">
-                            <h3>Archie Ralph</h3>
-                            <p>SAP FICO Consultant </p>
-                        </div>
-                    </div>
-                    <div class="review-item" data-target="5">
-                        <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/ava.png"
-                                alt="ava"></span>
-                        <div class="info">
-                            <h3>Ava Charles</h3>
-                            <p>SAP FICO Architect</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content-list">
-                    <div class="content-item" id="0">
-                        <span>
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/harry.png"
-                                alt="harry">
-                        </span>
-                        <div class="content">
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
-                                alt="yellow-stars">
-                            <p>SAP FICO course instructor was very knowledgeable and ensured everyone understood
-                                each topic, and I was amazed by the learning experience. I was highly thankful to
-                                Smith for helping me with the precise study material. He explained and showed me the
-                                best way to understand the essential concepts quickly. Everything about the course
-                                was perfect. Thank you, The Knowledge Academy.</p>
-                        </div>
-                    </div>
-                    <div class="content-item" id="1">
-                        <span>
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/oscar.png"
-                                alt="oscar">
-                        </span>
-                        <div class="content">
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
-                                alt="yellow-stars">
-                            <p>I completed sap fico training from The Knowledge Academy. The training material was
-                                well-structured and well-explained with relevant examples. I have thoroughly enjoyed
-                                the training. My trainer Robin was excellent, very knowledgeable and professional in
-                                his way. I was delighted with my purchase. I also told many friends about the
-                                quality of the course material and the excellent customer support.</p>
-                        </div>
-                    </div>
-                    <div class="content-item" id="2">
-                        <span>
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/amelia.png"
-                                alt="amelia">
-                        </span>
-                        <div class="content">
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
-                                alt="yellow-stars">
-                            <p>I finished this sap fico course at the knowledge academy. This course helped me in a
-                                significant way and also helped to increase my knowledge. The course material was
-                                well-written, well-organised, and easy to understand. The presentation content
-                                provided in this training was fantastic, fabulous, and easy to grab. My trainer
-                                Daniel helped me to clear all my doubts and gave meaningful examples to help me
-                                understand the course material. Overall my experience was delightful and thanks to
-                                my trainer.</p>
-                        </div>
-                    </div>
-                    <div class="content-item" id="3">
-                        <span>
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/florence.png"
-                                alt="florence">
-                        </span>
-                        <div class="content">
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
-                                alt="yellow-stars">
-                            <p>I recently took a sap fico course with a fantastic, extremely knowledgeable
-                                instructor. Noah did an excellent job of ensuring we grasped the material, relating
-                                it to actual situations, and allowing us to engage in discussions. He was extremely
-                                helpful and I would undoubtedly attend one of his courses again. For the excellent
-                                study, the knowledge academy comes highly recommended.</p>
-                        </div>
-                    </div>
-                    <div class="content-item" id="4">
-                        <span>
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/archie.png"
-                                alt="archie">
-                        </span>
-                        <div class="content">
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
-                                alt="yellow-stars">
-                            <p>My fantastic experience with the trainer was excellent in sap fico training. He
-                                methodically translated this teaching with a great degree of indebtedness,
-                                displaying high professionalism. I am delighted we were supposed to work together. I
-                                will be willing to have further engagements and training with James once the
-                                opportunity presents itself. The trainer and the knowledge academy did a fantastic
-                                job. I'm grateful.</p>
-                        </div>
-                    </div>
-                    <div class="content-item" id="5">
-                        <span>
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/ava.png"
-                                alt="ava">
-                        </span>
-                        <div class="content">
-                            <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
-                                alt="yellow-stars">
-                            <p>Last week, I attended sap fico course from the knowledge academy. My trainer
-                                explained all the essential concepts required to fit my position. He gave me the
-                                skills to work with business requirements and resolve support issues. I am grateful
-                                for attending this training and thankful for this platform. I recommend this
-                                platform to my near ones.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-</section>
+      <div class="container">
+        <div class="review-container">
 
-<section id="contact" class="bg-black">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-14 py-4">
-      <div class="relative mb-10 mt-6 lg:mt-0">
-        <div class="text-left">
-          <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
-            <span class="text-[#00e9c2]">Contact</span> Us
-          </h2>
-          <div class="w-24 h-1 bg-[#00e9c2]"></div>
-        </div>
-      </div>
-      <div class="pardot-form w-full">
-        <div class="">
-          <div class="flex flex-wrap -mx-4">
-            <!-- Left Column -->
-            <div class="w-full lg:w-5/12 md:w-5/12 px-4 mb-8 lg:mb-0">
-              <!-- Title Section -->
-              <div class="mb-6">
-                <div class="text-2xl text-white md:text-6xl">
-                  Get in touch and get started today. We're ready!
-                </div>
-              </div>
-
-              <!-- Description Section -->
-              <div class="text-gray-700">
-                <div class="prose max-w-none text-white">
-                  <p class="mb-4">
-                    As a leading web development firm, we provide experienced consultants, designers and developers to
-                    take your online presence to the next level. In addition to creating robust, scalable and secure
-                    enterprise web-based experiences, Appnovation can also help organizations with migrations, upgrades
-                    and integration. Lastly, we offer a full service Managed Services offering that includes 24x7
-                    support and maintenance that is able to handle even the most extreme and complex cases swiftly and
-                    easily.
-                  </p>
-
-                  <p class="mb-4">
-                    Complete the form, email us at
-                    <a href="mailto:contact@techminimaa.com" class="text-blue-600 hover:text-blue-800">
-                      contact@techminimaa.com
-                    </a>
-                    or contact us directly by phone at one of our
-                    <a href="https://www.appnovation.com/contact-us" class="text-blue-600 hover:text-blue-800">
-                      global office locations
-                    </a>
-                    to talk about your next or an upcoming project. Need more convincing? Just take a look at our client
-                    list to see just some of the brand names that Appnovation has helped and now call customers.
-                  </p>
-                </div>
+          <div class="review-list owl-carousel">
+            <div class="review-item" data-target="0">
+              <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/harry.png" alt="harry"></span>
+              <div class="info">
+                <h3>Harry Thomas</h3>
+                <p>SAP FICO Manager</p>
               </div>
             </div>
-
-            <!-- Right Column - Form -->
-            <div class="w-full lg:w-7/12 md:w-7/12 px-4">
-              <form id="pardot-form" class="flex flex-wrap justify-between gap-6">
-                <!-- First Name -->
-                <div class="w-full md:w-[48%]">
-                  <input type="text" placeholder="Name**"
-                    class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700"
-                    required>
-                </div>
-
-                <!-- Last Name -->
-
-                <!-- Job Title -->
-                <div class="w-full md:w-[48%]">
-                  <input type="text" placeholder="Job Title"
-                    class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700">
-                </div>
-
-                <!-- Company -->
-                <div class="w-full md:w-[48%]">
-                  <input type="text" placeholder="Company"
-                    class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700">
-                </div>
-
-                <!-- Email -->
-                <div class="w-full md:w-[48%] relative">
-                  <input type="email" placeholder="Work Email**"
-                    class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700"
-                    required>
-                  <div
-                    class="email-tip hidden absolute mt-2 p-3 bg-white border border-gray-200 rounded-md shadow-lg w-[90%] mx-[5%] text-center text-sm">
-                    Please use your work email address, so we can get back to you quickly.
-                  </div>
-                </div>
-
-                <!-- Phone -->
-                <div class="w-full md:w-[48%]">
-                  <input type="tel" placeholder="Phone"
-                    class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700">
-                </div>
-
-                <!-- Country -->
-                <div class="w-full md:w-[48%]">
-                  <select
-                    class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwb2x5bGluZSBwb2ludHM9IjYgOSAxMiAxNSAxOCA5Ij48L3BvbHlsaW5lPjwvc3ZnPg==')] bg-no-repeat bg-[center_right_1rem]"
-                    required>
-                    <option value="">Country**</option>
-                    <!-- Add country options -->
-                  </select>
-                </div>
-
-
-
-                <!-- Project Details -->
-                <div class="w-full">
-                  <textarea placeholder="Project Details/Inquiry**" rows="8"
-                    class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700 resize-vertical"
-                    required></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="w-full flex flex-col md:flex-row items-center justify-center gap-6 ">
-
-
-                  <!-- Email Section -->
-                  <div class="flex items-center gap-2">
-                    <!-- Alternate Email Icon -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 20 20"
-                      fill="currentColor">
-                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                    </svg>
-                    <span class="text-gray-700 text-md text-white">Or email us at</span>
-                    <a href="mailto:contact@techminimaa.com"
-                      class="text-[#00e9c2] hover:text-[#baf7e7] text-sm underline transition-colors duration-200">
-                      contact@techminimaa.com
-                    </a>
-                  </div>
-                  <button href="/contact" id="contactBtn"
-                    class="flex items-center group relative px-8 py-4 bg-[#00e9c2] text-black font-semibold rounded-none hover:bg-white transition-all duration-300">
-                    Submit Now
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2"
-                      viewBox="0 0 492.004 492.004">
-                      <path
-                        d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
-                        data-original="#000000" />
-                    </svg>
-                    <div
-                      class="absolute inset-0 border border-[#00e9c2] transform translate-x-1 translate-y-1 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300">
-                    </div>
-                  </button>
-                </div>
-              </form>
+            <div class="review-item" data-target="1">
+              <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/oscar.png" alt="oscar"></span>
+              <div class="info">
+                <h3>Oscar Finley</h3>
+                <p>SAP FICO Analyst</p>
+              </div>
+            </div>
+            <div class="review-item" data-target="2">
+              <span> <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/amelia.png"
+                  alt="amelia"></span>
+              <div class="info">
+                <h3>Amelia Louis</h3>
+                <p>Programme Manager</p>
+              </div>
+            </div>
+            <div class="review-item" data-target="3">
+              <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/florence.png"
+                  alt="florence"></span>
+              <div class="info">
+                <h3>Florence Blake</h3>
+                <p>SAP FICO Lead</p>
+              </div>
+            </div>
+            <div class="review-item" data-target="4">
+              <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/archie.png"
+                  alt="archie"></span>
+              <div class="info">
+                <h3>Archie Ralph</h3>
+                <p>SAP FICO Consultant </p>
+              </div>
+            </div>
+            <div class="review-item" data-target="5">
+              <span><img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/ava.png" alt="ava"></span>
+              <div class="info">
+                <h3>Ava Charles</h3>
+                <p>SAP FICO Architect</p>
+              </div>
+            </div>
+          </div>
+          <div class="content-list">
+            <div class="content-item" id="0">
+              <span>
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/harry.png" alt="harry">
+              </span>
+              <div class="content">
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
+                  alt="yellow-stars">
+                <p>SAP FICO course instructor was very knowledgeable and ensured everyone understood
+                  each topic, and I was amazed by the learning experience. I was highly thankful to
+                  Smith for helping me with the precise study material. He explained and showed me the
+                  best way to understand the essential concepts quickly. Everything about the course
+                  was perfect. Thank you, The Knowledge Academy.</p>
+              </div>
+            </div>
+            <div class="content-item" id="1">
+              <span>
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/oscar.png" alt="oscar">
+              </span>
+              <div class="content">
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
+                  alt="yellow-stars">
+                <p>I completed sap fico training from The Knowledge Academy. The training material was
+                  well-structured and well-explained with relevant examples. I have thoroughly enjoyed
+                  the training. My trainer Robin was excellent, very knowledgeable and professional in
+                  his way. I was delighted with my purchase. I also told many friends about the
+                  quality of the course material and the excellent customer support.</p>
+              </div>
+            </div>
+            <div class="content-item" id="2">
+              <span>
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/amelia.png" alt="amelia">
+              </span>
+              <div class="content">
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
+                  alt="yellow-stars">
+                <p>I finished this sap fico course at the knowledge academy. This course helped me in a
+                  significant way and also helped to increase my knowledge. The course material was
+                  well-written, well-organised, and easy to understand. The presentation content
+                  provided in this training was fantastic, fabulous, and easy to grab. My trainer
+                  Daniel helped me to clear all my doubts and gave meaningful examples to help me
+                  understand the course material. Overall my experience was delightful and thanks to
+                  my trainer.</p>
+              </div>
+            </div>
+            <div class="content-item" id="3">
+              <span>
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/florence.png" alt="florence">
+              </span>
+              <div class="content">
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
+                  alt="yellow-stars">
+                <p>I recently took a sap fico course with a fantastic, extremely knowledgeable
+                  instructor. Noah did an excellent job of ensuring we grasped the material, relating
+                  it to actual situations, and allowing us to engage in discussions. He was extremely
+                  helpful and I would undoubtedly attend one of his courses again. For the excellent
+                  study, the knowledge academy comes highly recommended.</p>
+              </div>
+            </div>
+            <div class="content-item" id="4">
+              <span>
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/archie.png" alt="archie">
+              </span>
+              <div class="content">
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
+                  alt="yellow-stars">
+                <p>My fantastic experience with the trainer was excellent in sap fico training. He
+                  methodically translated this teaching with a great degree of indebtedness,
+                  displaying high professionalism. I am delighted we were supposed to work together. I
+                  will be willing to have further engagements and training with James once the
+                  opportunity presents itself. The trainer and the knowledge academy did a fantastic
+                  job. I'm grateful.</p>
+              </div>
+            </div>
+            <div class="content-item" id="5">
+              <span>
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/ava.png" alt="ava">
+              </span>
+              <div class="content">
+                <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/yellow-stars.png"
+                  alt="yellow-stars">
+                <p>Last week, I attended sap fico course from the knowledge academy. My trainer
+                  explained all the essential concepts required to fit my position. He gave me the
+                  skills to work with business requirements and resolve support issues. I am grateful
+                  for attending this training and thankful for this platform. I recommend this
+                  platform to my near ones.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+  </main>
 </section>
 
+<section class="bg-black text-white">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="relative mb-6">
+      <div class="text-left">
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+          <span class="text-[#00e9c2]">Our</span> Stats
+        </h2>
+        <div class="w-24 h-1 bg-[#00e9c2]"></div>
+      </div>
+    </div>
+    <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-x-6 gap-y-12 lg:max-w-7xl sm:max-w-2xl mx-auto">
+      <div class="text-center bg-zinc-900 px-4 py-6  border-b-4 border-[#00e9c2] rounded-md  hover:bg-zinc-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-[#00e9c2] w-10 inline-block" viewBox="0 0 512 512"
+          aria-hidden="true" role="img">
+          <path
+            d="M426.666667 0H85.333333C38.186667 0 0 38.186667 0 85.333333v341.333334C0 473.813333 38.186667 512 85.333333 512h341.333334C473.813333 512 512 473.813333 512 426.666667V85.333333C512 38.186667 473.813333 0 426.666667 0zM469.333333 426.666667c0 23.466667-19.2 42.666667-42.666666 42.666666H85.333333c-23.466667 0-42.666667-19.2-42.666666-42.666666V85.333333c0-23.466667 19.2-42.666667 42.666666-42.666666h341.333334c23.466667 0 42.666667 19.2 42.666666 42.666666v341.333334z" />
+
+          <path
+            d="M226.133333 268.8l-29.866666-29.866667c-4.266667-4.266667-4.266667-10.666667 0-14.933333 4.266667-4.266667 10.666667-4.266667 14.933333 0l22.4 22.4 48-48c4.266667-4.266667 10.666667-4.266667 14.933333 0 4.266667 4.266667 4.266667 10.666667 0 14.933333l-55.466666 55.466667c-4.266667 4.266667-10.666667 4.266667-14.933334 0z" />
+        </svg>
+        <h3 class="text-white text-4xl font-bold mt-4 counter projects">0+</h3>
+        <p class="text-gray-400 font-semibold mt-2">Projects Completed</p>
+      </div>
+      <div class="text-center bg-zinc-900 px-4 py-6  border-b-4 border-[#00e9c2] rounded-md  hover:bg-zinc-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-[#00e9c2] w-10 inline-block" viewBox="0 0 512 512"
+          aria-hidden="true" role="img">
+          <!-- Base Circle -->
+          <path
+            d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zm0 448c-106.039 0-192-85.961-192-192S149.961 64 256 64s192 85.961 192 192-85.961 192-192 192z" />
+
+          <!-- Progress Segments -->
+          <path
+            d="M256 92.8c89.6 0 163.2 72.8 163.2 163.2 0 89.6-72.8 163.2-163.2 163.2-89.6 0-163.2-72.8-163.2-163.2 0-89.6 72.8-163.2 163.2-163.2zm0 284.8c67.2 0 121.6-54.4 121.6-121.6 0-67.2-54.4-121.6-121.6-121.6v121.6l-86.4-86.4c-38.4 38.4-38.4 99.2 0 137.6 38.4 38.4 99.2 38.4 137.6 0" />
+
+          <!-- Active Indicator Dots -->
+          <circle cx="256" cy="128" r="24" />
+          <circle cx="384" cy="256" r="24" />
+          <circle cx="256" cy="384" r="24" />
+
+          <!-- Progress Arrow -->
+          <path d="M256 176v-48c70.4 0 128 57.6 128 128h-48c0-44.183-35.817-80-80-80z">
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 256 256"
+              to="360 256 256" dur="2s" repeatCount="indefinite" />
+          </path>
+        </svg>
+        <h3 class="text-white text-4xl font-bold mt-4 counter ongoing">0+</h3>
+        <p class="text-gray-400 font-semibold mt-2">Ongoing Projects</p>
+      </div>
+      <div class="text-center bg-zinc-900 px-4 py-6  border-b-4 border-[#00e9c2] rounded-md  hover:bg-zinc-800">
+        <svg class="fill-[#00e9c2] w-10 inline-block" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 122.699 122.699" xml:space="preserve">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <g>
+              <circle cx="19.5" cy="12.2" r="12.1"></circle>
+              <path
+                d="M6,66.699h1.2v24c0,3.301,2.7,6,6,6h12.6c3.3,0,6-2.699,6-6V89.3c-1.1-2.101-1.8-4.5-1.8-7v-31.4c0-6.1,3.7-11.4,9-13.7 v-2.4c0-3.3-2.7-6-6-6H6c-3.3,0-6,2.7-6,6v25.9C0,64,2.6,66.699,6,66.699z">
+              </path>
+              <circle cx="103.3" cy="12.2" r="12.1"></circle>
+              <path
+                d="M83.699,34.7v2.4c5.301,2.3,9,7.6,9,13.7v31.3c0,2.5-0.6,4.9-1.799,7v1.4c0,3.3,2.699,6,6,6h12.6c3.3,0,6-2.7,6-6v-24 h1.199c3.301,0,6-2.7,6-6V34.7c0-3.3-2.699-6-6-6h-27C86.4,28.7,83.699,31.399,83.699,34.7z">
+              </path>
+              <path
+                d="M39.1,50.899L39.1,50.899v9.8v21.6c0,3.3,2.7,6,6,6h2.3v28.3c0,3.3,2.7,6,6,6h16.1c3.3,0,6-2.7,6-6v-28.4h2.3 c3.3,0,6-2.699,6-6V60.7v-9.8l0,0c0-3.3-2.7-6-6-6H45.1C41.7,44.899,39.1,47.6,39.1,50.899z">
+              </path>
+              <circle cx="61.4" cy="26" r="13.9"></circle>
+            </g>
+          </g>
+        </svg>
+        <h3 class="text-white text-4xl font-bold mt-4 counter performance percentage">0%</h3>
+        <p class="text-gray-400 font-semibold mt-2">Team Performance</p>
+      </div>
+      <div class="text-center bg-zinc-900 px-4 py-6  border-b-4 border-[#00e9c2] rounded-md  hover:bg-zinc-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="fill-[#00e9c2] w-10 inline-block" viewBox="0 0 28 28">
+          <path
+            d="M18.56 16.94h-3.12l.65-2.16a2.58 2.58 0 0 0-1.66-3.21 1.41 1.41 0 0 0-1.81 1l-.1.42a8.61 8.61 0 0 1-2.26 4l-.57.56a1.56 1.56 0 0 0-1.21-.59h-.73a1.56 1.56 0 0 0-1.56 1.54v6.44a1.56 1.56 0 0 0 1.56 1.56h.73a1.55 1.55 0 0 0 1.33-.76l.14.07a6.55 6.55 0 0 0 2.91.69h3.59a3.58 3.58 0 0 0 3-1.6 6.34 6.34 0 0 0 1.07-3.53v-2.49a1.94 1.94 0 0 0-1.96-1.94zm-9.56 8a.56.56 0 0 1-.56.56h-.69a.56.56 0 0 1-.56-.56V18.5a.56.56 0 0 1 .56-.56h.73a.56.56 0 0 1 .52.56zm10.5-3.57a5.38 5.38 0 0 1-.9 3 2.59 2.59 0 0 1-2.15 1.15h-3.59a5.53 5.53 0 0 1-2.46-.58l-.4-.2V18.6l.92-.92a9.63 9.63 0 0 0 2.53-4.46l.1-.41a.43.43 0 0 1 .2-.26.4.4 0 0 1 .32 0 1.58 1.58 0 0 1 1 2l-.84 2.81a.5.5 0 0 0 .08.44.48.48 0 0 0 .4.2h3.79a.94.94 0 0 1 .94.94zM11 7.3l-.32 1.85a1.09 1.09 0 0 0 .44 1.09 1.11 1.11 0 0 0 .65.22 1.18 1.18 0 0 0 .52-.13L14 9.45l1.67.88a1.1 1.1 0 0 0 1.17-.09 1.09 1.09 0 0 0 .44-1.08L17 7.3 18.31 6a1.1 1.1 0 0 0 .29-1.14 1.12 1.12 0 0 0-.9-.76l-1.87-.27L15 2.12a1.12 1.12 0 0 0-2 0l-.83 1.69-1.87.27a1.12 1.12 0 0 0-.9.76A1.1 1.1 0 0 0 9.69 6zm-.6-2.23 2.13-.31a.49.49 0 0 0 .47-.27l1-1.93a.11.11 0 0 1 .2 0l1 1.93a.49.49 0 0 0 .38.27l2.13.31a.12.12 0 0 1 .09.08.11.11 0 0 1 0 .11l-1.54 1.5a.53.53 0 0 0-.15.45l.37 2.11a.09.09 0 0 1-.05.11.1.1 0 0 1-.12 0l-1.9-1a.47.47 0 0 0-.46 0l-1.91 1a.09.09 0 0 1-.11 0 .09.09 0 0 1-.05-.11l.37-2.11a.53.53 0 0 0-.15-.45l-1.54-1.5a.11.11 0 0 1 0-.11.12.12 0 0 1-.12-.08zm-3.06 8.18a1 1 0 0 0 1-1.19l-.27-1.52 1.12-1.09a1 1 0 0 0-.56-1.73L7.1 7.5l-.69-1.39a1.05 1.05 0 0 0-1.82 0L3.9 7.5l-1.53.22a1 1 0 0 0-.56 1.73l1.11 1.09-.27 1.52a1 1 0 0 0 .41 1 1 1 0 0 0 1.07.07l1.37-.72 1.37.72a1 1 0 0 0 .47.12zm-1.84-1.9a.46.46 0 0 0-.23.06l-1.63.82.36-1.78a.53.53 0 0 0-.2-.45L2.51 8.71l1.8-.26a.47.47 0 0 0 .37-.27l.83-1.63.81 1.63a.47.47 0 0 0 .37.27l1.8.29L7.2 10a.53.53 0 0 0-.15.45l.29 1.8-1.61-.84a.46.46 0 0 0-.23-.06zm20.95-2.94a1 1 0 0 0-.82-.69L24.1 7.5l-.69-1.39a1.05 1.05 0 0 0-1.82 0L20.9 7.5l-1.53.22a1 1 0 0 0-.56 1.73l1.11 1.09-.27 1.52a1 1 0 0 0 .41 1 1 1 0 0 0 1.07.07l1.37-.72 1.37.72a1 1 0 0 0 .47.12 1 1 0 0 0 1-1.19l-.27-1.52 1.11-1.09a1 1 0 0 0 .27-1.04zM24.2 10a.53.53 0 0 0-.15.45l.29 1.8-1.61-.84a.47.47 0 0 0-.46 0l-1.63.82.36-1.78a.53.53 0 0 0-.2-.45l-1.29-1.29 1.8-.26a.47.47 0 0 0 .37-.27l.83-1.63.81 1.63a.47.47 0 0 0 .37.27l1.8.29z"
+            data-name="Layer 2" data-original="#000000" />
+        </svg>
+        <h3 class="text-white text-4xl font-bold mt-4 counter rating">0.0 / 5</h3>
+        <p class="text-gray-400 font-semibold mt-2">Client Feedback</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="bg-black">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-14 py-4">
+    <div class="relative mb-10 mt-6 lg:mt-0">
+      <div class="text-left">
+        <h2 class="text-5xl md:text-7xl font-bold text-white mb-8">
+          <span class="text-[#00e9c2]">Contact</span> Us
+        </h2>
+        <div class="w-24 h-1 bg-[#00e9c2]"></div>
+      </div>
+    </div>
+    <div class="pardot-form w-full">
+      <div class="">
+        <div class="flex flex-wrap -mx-4">
+          <!-- Left Column -->
+          <div class="w-full lg:w-5/12 md:w-5/12 px-4 mb-8 lg:mb-0">
+            <!-- Title Section -->
+            <div class="mb-6">
+              <div class="text-2xl text-white md:text-6xl">
+                Get in touch and get started today. We're ready!
+              </div>
+            </div>
+
+            <!-- Description Section -->
+            <div class="text-gray-700">
+              <div class="prose max-w-none text-white">
+                <p class="mb-4">
+                  As a leading web development firm, we provide experienced consultants, designers and developers to
+                  take your online presence to the next level. In addition to creating robust, scalable and secure
+                  enterprise web-based experiences, Appnovation can also help organizations with migrations, upgrades
+                  and integration. Lastly, we offer a full service Managed Services offering that includes 24x7
+                  support and maintenance that is able to handle even the most extreme and complex cases swiftly and
+                  easily.
+                </p>
+
+                <p class="mb-4">
+                  Complete the form, email us at
+                  <a href="mailto:contact@techminimaa.com" class="text-blue-600 hover:text-blue-800">
+                    contact@techminimaa.com
+                  </a>
+                  or contact us directly by phone at one of our
+                  <a href="https://www.appnovation.com/contact-us" class="text-blue-600 hover:text-blue-800">
+                    global office locations
+                  </a>
+                  to talk about your next or an upcoming project. Need more convincing? Just take a look at our client
+                  list to see just some of the brand names that Appnovation has helped and now call customers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Form -->
+          <div class="w-full lg:w-7/12 md:w-7/12 px-4">
+            <form id="pardot-form" class="flex flex-wrap justify-between gap-6">
+              <!-- First Name -->
+              <div class="w-full md:w-[48%]">
+                <input type="text" placeholder="Name**"
+                  class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700"
+                  required>
+              </div>
+
+              <!-- Last Name -->
+
+              <!-- Job Title -->
+              <div class="w-full md:w-[48%]">
+                <input type="text" placeholder="Job Title"
+                  class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700">
+              </div>
+
+              <!-- Company -->
+              <div class="w-full md:w-[48%]">
+                <input type="text" placeholder="Company"
+                  class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700">
+              </div>
+
+              <!-- Email -->
+              <div class="w-full md:w-[48%] relative">
+                <input type="email" placeholder="Work Email**"
+                  class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700"
+                  required>
+                <div
+                  class="email-tip hidden absolute mt-2 p-3 bg-white border border-gray-200 rounded-md shadow-lg w-[90%] mx-[5%] text-center text-sm">
+                  Please use your work email address, so we can get back to you quickly.
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="w-full md:w-[48%]">
+                <input type="tel" placeholder="Phone"
+                  class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700">
+              </div>
+
+              <!-- Country -->
+              <div class="w-full md:w-[48%]">
+                <select
+                  class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700 appearance-none bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwb2x5bGluZSBwb2ludHM9IjYgOSAxMiAxNSAxOCA5Ij48L3BvbHlsaW5lPjwvc3ZnPg==')] bg-no-repeat bg-[center_right_1rem]"
+                  required>
+                  <option value="">Country**</option>
+                  <!-- Add country options -->
+                </select>
+              </div>
+
+
+
+              <!-- Project Details -->
+              <div class="w-full">
+                <textarea placeholder="Project Details/Inquiry**" rows="8"
+                  class="w-full px-5 py-6 rounded-md border border-gray-200 focus:border-gray-400 outline-none transition-all bg-white text-gray-700 resize-vertical"
+                  required></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="w-full flex flex-col md:flex-row items-center justify-center gap-6 ">
+
+
+                <!-- Email Section -->
+                <div class="flex items-center gap-2">
+                  <!-- Alternate Email Icon -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                  <span class="text-gray-700 text-md text-white">Or email us at</span>
+                  <a href="mailto:contact@techminimaa.com"
+                    class="text-[#00e9c2] hover:text-[#baf7e7] text-sm underline transition-colors duration-200">
+                    contact@techminimaa.com
+                  </a>
+                </div>
+                <button href="/contact" id="contactBtn"
+                  class="flex items-center group relative px-8 py-4 bg-[#00e9c2] text-black font-semibold rounded-none hover:bg-white transition-all duration-300">
+                  Submit Now
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-[14px] fill-current ml-2"
+                    viewBox="0 0 492.004 492.004">
+                    <path
+                      d="M484.14 226.886 306.46 49.202c-5.072-5.072-11.832-7.856-19.04-7.856-7.216 0-13.972 2.788-19.044 7.856l-16.132 16.136c-5.068 5.064-7.86 11.828-7.86 19.04 0 7.208 2.792 14.2 7.86 19.264L355.9 207.526H26.58C11.732 207.526 0 219.15 0 234.002v22.812c0 14.852 11.732 27.648 26.58 27.648h330.496L252.248 388.926c-5.068 5.072-7.86 11.652-7.86 18.864 0 7.204 2.792 13.88 7.86 18.948l16.132 16.084c5.072 5.072 11.828 7.836 19.044 7.836 7.208 0 13.968-2.8 19.04-7.872l177.68-177.68c5.084-5.088 7.88-11.88 7.86-19.1.016-7.244-2.776-14.04-7.864-19.12z"
+                      data-original="#000000" />
+                  </svg>
+                  <div
+                    class="absolute inset-0 border border-[#00e9c2] transform translate-x-1 translate-y-1 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300">
+                  </div>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="bg-black">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:py-14 py-4">
     <div class="relative mb-10 mt-6 lg:mt-0">
@@ -1002,82 +1080,98 @@ hover:bg-gray-900/50 transition-all duration-500">
         <div class="w-24 h-1 bg-[#00e9c2]"></div>
       </div>
     </div>
-    <div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+    <div
+      class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
       <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
-          <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What is web development?</h3>
-          <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
-               alt="down-arrow" 
-               class="w-6 h-6">
+        <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What is web
+          development?</h3>
+        <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" alt="down-arrow"
+          class="w-6 h-6">
       </div>
       <div class="ans hidden p-4 md:p-5">
-          <p class="text-sm">Web development is the process of building, programming, and maintaining websites and web applications. Web developers use various coding and programming languages, like HTML, to build sites and applications.</p>
-      </div>
-  </div>
-  <div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
-    <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
-        <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What are web development services?</h3>
-        <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
-             alt="down-arrow" 
-             class="w-6 h-6">
-    </div>
-    <div class="ans hidden p-4 md:p-5">
-        <p class="text-sm">Web development services are services provided by an agency, company, or freelancer that help you build your website, implement various website functions and applications, and maintain your site.</p>
-    </div>
-</div>
-
-<div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
-  <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
-      <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What’s the difference between web development and web design? </h3>
-      <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
-           alt="down-arrow" 
-           class="w-6 h-6">
-  </div>
-  <div class="ans hidden p-4 md:p-5">
-      <p class="text-sm">Web design refers to the aesthetic appearance of your website, like the colors and placement of your buttons, the look of your header and footer banners, and more. Web development refers to the functionality of your website, like ensuring your buttons route users to the correct place. Web designers essentially create the look of your site, and web developers use coding and programming languages to make that look come to life and function correctly as a website.</p>
-  </div>
-</div>
-
-<div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
-  <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
-      <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What is the average cost of web development services?</h3>
-      <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
-           alt="down-arrow" 
-           class="w-6 h-6">
-  </div>
-  <div class="ans hidden p-4 md:p-5">
-      <p class="text-sm">The average cost of web development services can range anywhere from $1,000 – $145,000 per website. How much you’ll pay depends on several factors, like the scope of your project, the size of your website, your chosen web development agency, and more!</p>
-  </div>
-</div>
-
-<div class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
-  <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
-      <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What are the different types of web development services?</h3>
-      <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" 
-           alt="down-arrow" 
-           class="w-6 h-6">
-  </div>
-  <div class="ans hidden p-4 md:p-5">
-    <div class="_panel-body ">
-      <div class="_text">
-        <p class="text-lg">The different types of web development services include:</p>
-<ul class="list-disc ml-6">
-<li>Responsive design</li>
-<li>Ecommerce functionality</li>
-<li>Website call tracking</li>
-<li>CMS development and integration</li>
-<li>Website security</li>
-<li>Website maintenance</li>
-<li>Design functionality</li>
-<li>Marketing automation</li>
-<li>Company targeting</li>
-<li>Mobile app development</li>
-</ul>
+        <p class="text-sm">Web development is the process of building, programming, and maintaining websites and web
+          applications. Web developers use various coding and programming languages, like HTML, to build sites and
+          applications.</p>
       </div>
     </div>
-  </div>
-</div>
+    <div
+      class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+      <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+        <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What are web
+          development services?</h3>
+        <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" alt="down-arrow"
+          class="w-6 h-6">
+      </div>
+      <div class="ans hidden p-4 md:p-5">
+        <p class="text-sm">Web development services are services provided by an agency, company, or freelancer that help
+          you build your website, implement various website functions and applications, and maintain your site.</p>
+      </div>
+    </div>
+
+    <div
+      class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+      <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+        <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What’s the
+          difference between web development and web design? </h3>
+        <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" alt="down-arrow"
+          class="w-6 h-6">
+      </div>
+      <div class="ans hidden p-4 md:p-5">
+        <p class="text-sm">Web design refers to the aesthetic appearance of your website, like the colors and placement
+          of your buttons, the look of your header and footer banners, and more. Web development refers to the
+          functionality of your website, like ensuring your buttons route users to the correct place. Web designers
+          essentially create the look of your site, and web developers use coding and programming languages to make that
+          look come to life and function correctly as a website.</p>
+      </div>
+    </div>
+
+    <div
+      class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+      <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+        <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What is the average
+          cost of web development services?</h3>
+        <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" alt="down-arrow"
+          class="w-6 h-6">
+      </div>
+      <div class="ans hidden p-4 md:p-5">
+        <p class="text-sm">The average cost of web development services can range anywhere from $1,000 – $145,000 per
+          website. How much you’ll pay depends on several factors, like the scope of your project, the size of your
+          website, your chosen web development agency, and more!</p>
+      </div>
+    </div>
+
+    <div
+      class="faq-item flex flex-col bg-[#F5F5F5] border-2 border-[#00e9c2] rounded-t-[14px] mt-6 transition-all duration-1000">
+      <div class="ques flex justify-between items-center p-3 md:p-5 cursor-pointer">
+        <h3 class="text-sm md:text-lg font-medium w-[calc(100%-35px)] transition-all duration-1000">What are the
+          different types of web development services?</h3>
+        <img src="https://www.theknowledgeacademy.com/_public/images/sap-fico/down-arrow.svg" alt="down-arrow"
+          class="w-6 h-6">
+      </div>
+      <div class="ans hidden p-4 md:p-5">
+        <div class="_panel-body ">
+          <div class="_text">
+            <p class="text-lg">The different types of web development services include:</p>
+            <ul class="list-disc ml-6">
+              <li>Responsive design</li>
+              <li>Ecommerce functionality</li>
+              <li>Website call tracking</li>
+              <li>CMS development and integration</li>
+              <li>Website security</li>
+              <li>Website maintenance</li>
+              <li>Design functionality</li>
+              <li>Marketing automation</li>
+              <li>Company targeting</li>
+              <li>Mobile app development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
   </div>
 </section>
+
+ 
 @endsection

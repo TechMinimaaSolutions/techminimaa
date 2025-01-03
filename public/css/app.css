@@ -5,8 +5,13 @@
     margin: 0;
     font-weight: 500;
     line-height: 1.6;
-    color: #f7f2f2;
+    /* color: #f7f2f2; */
     font-size: 14px;
+}
+.review-container p {
+  ;
+    color: #f7f2f2;
+   
 }
 
 .review-container ul {
