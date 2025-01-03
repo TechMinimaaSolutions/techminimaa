@@ -192,7 +192,7 @@
             <div class="text-center text-dark relative z-[1]">
                 <h2 class="mb-12 text-4xl font-semibold md:font-extrabold" data-aos="fade-up">
                     <span class="font-normal sm:font-semibold md:font-extrabold sm:text-inherit">
-                        How do we improve your product <br>with blockchain technology?ss
+                        How do we improve your product <br>with blockchain technology?
                     </span><br>
                 </h2>
                 <div data-aos="fade-up">
