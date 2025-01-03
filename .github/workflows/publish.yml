@@ -7,18 +7,13 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.GH_PAT }} 
-
       - name: Deploy Code Changes
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}   
+          username: ${{ secrets.SSH_USERNAME }}
           port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }} 
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             # Go to your project directory
             cd domains/techminimaa.com/public_html
