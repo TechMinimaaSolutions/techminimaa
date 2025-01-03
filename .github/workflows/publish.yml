@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.GH_PAT }}
+          token: ${{ secrets.GH_PAT }} 
 
       - name: Deploy Code Changes
         uses: appleboy/ssh-action@master
