@@ -11,6 +11,14 @@ Route::get('/services', function () {
     return view('services');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/request-demo', function () {
+    return view('request-demo');
+});
+
 Route::get('/upload', [ImageUploadController::class, 'showUploadForm'])->name('upload.form');
 Route::post('/upload', [ImageUploadController::class, 'uploadImage'])->name('upload.image');
 
