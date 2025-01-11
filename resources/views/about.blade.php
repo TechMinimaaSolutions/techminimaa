@@ -8,7 +8,7 @@
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 order-2 md:order-1 mb-4 md:mb-0">
                 <h1 class="text-3xl md:text-4xl font-bold mb-4 text-blue-500">
-                    Domain Expertise Combined with Cutting-Edge Technology
+<!--                     Domain Expertise Combined with Cutting-Edge Technology -->
                 </h1>
                 <p class="mb-4 md:mb-5 text-lg">
                     Inventia uses its domain expertise in providing a unified digital transformation platform tailor-made for our clients helping them achieve sustainable growth.
